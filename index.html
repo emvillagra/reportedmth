@@ -1619,6 +1619,80 @@
     }
 
 
+    /* ── MÓDULO STOCK PRODUCCIÓN DMTH ── */
+    #stock-container{display:none}
+    .stock-only-mode > .export-brand,
+    .stock-only-mode > #weekly-container,
+    .stock-only-mode > #daily-container,
+    .stock-only-mode > .section-hdr,
+    .stock-only-mode > #summary-container,
+    .stock-only-mode > #tipo-container,
+    .stock-only-mode > #kpi-container,
+    .stock-only-mode > #vja-container,
+    .stock-only-mode > #foda-container,
+    .stock-only-mode > #insights-container,
+    .stock-only-mode > #pareto-container,
+    .stock-only-mode > #recomendaciones-container,
+    .stock-only-mode > #charts-container,
+    .stock-only-mode > #table-container,
+    .stock-only-mode > .designer-credit{display:none!important}
+    .stock-only-mode > #stock-container{display:block!important}
+    .stock-field{display:none}
+    body.stock-view .stock-field{display:flex}
+    body.stock-view .toolbar-card .field:not(.stock-date-field):not(.stock-field){display:none!important}
+    body.stock-view .toolbar-card .toolbar-sep{display:block!important}
+    .stock-shell{display:grid;gap:12px}
+    .stock-hero{background:linear-gradient(135deg,#16261C 0%,#284A34 58%,#C08A2E 100%);color:#fff;border-radius:16px;padding:16px 18px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center}
+    .stock-hero h2{font-size:17px;font-weight:950;margin:0 0 5px;color:#fff}
+    .stock-hero p{font-size:10.8px;line-height:1.5;color:rgba(255,255,255,.82);margin:0;max-width:850px}
+    .stock-formula{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:9px 11px;font-size:10px;font-weight:900;white-space:nowrap}
+    .stock-filter-note{background:#FBF1DC;border:1px solid #EAD9A6;border-radius:12px;padding:9px 11px;font-size:10.2px;color:#6B4C15;line-height:1.45}
+    .stock-kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+    .stock-kpi{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:11px;position:relative;overflow:hidden}
+    .stock-kpi::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:var(--blue2)}
+    .stock-kpi.good::before{background:var(--green2)}.stock-kpi.warn::before{background:var(--amber2)}.stock-kpi.bad::before{background:var(--red2)}.stock-kpi.info::before{background:var(--teal2)}
+    .stock-kpi span{display:block;font-size:8.8px;text-transform:uppercase;letter-spacing:.45px;color:var(--muted);font-weight:950}
+    .stock-kpi b{display:block;font-size:21px;color:var(--navy);line-height:1;margin-top:6px}
+    .stock-kpi small{display:block;font-size:9.4px;color:var(--muted);line-height:1.3;margin-top:6px}
+    .stock-section{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .stock-section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,#F7F2E6)}
+    .stock-section-head h3{font-size:13px;font-weight:950;color:var(--navy);margin:0}
+    .stock-section-head p{font-size:9.7px;color:var(--muted);margin:3px 0 0;line-height:1.35}
+    .stock-section-badge{font-size:9.5px;font-weight:950;border-radius:999px;padding:5px 8px;background:#FBF1DC;color:#8A5A12;border:1px solid #EAD9A6;white-space:nowrap}
+    .stock-chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .stock-chart-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px}
+    .stock-chart-card.wide{grid-column:1/-1}
+    .stock-chart-card h3{font-size:11.5px;font-weight:950;margin:0 0 2px;color:var(--navy)}
+    .stock-chart-card p{font-size:9.5px;color:var(--muted);margin:0 0 8px;line-height:1.35}
+    .stock-chart-box{height:225px;position:relative}
+    .stock-table-wrap{overflow:auto;max-height:530px}
+    table.stock-table{width:100%;min-width:1080px;border-collapse:separate;border-spacing:0}
+    table.stock-table th{position:sticky;top:0;z-index:2;background:#16261C;color:#fff;padding:8px 9px;text-align:left;font-size:8.7px;text-transform:uppercase;letter-spacing:.28px;white-space:nowrap}
+    table.stock-table td{padding:7px 9px;border-bottom:1px solid var(--border);font-size:10.4px;color:#334155;vertical-align:middle;background:#fff}
+    table.stock-table tr:nth-child(even) td{background:#F7F2E6}
+    table.stock-table tr:hover td{background:#FBF1DC}
+    table.stock-table td.n{text-align:right;font-variant-numeric:tabular-nums;font-weight:850;white-space:nowrap}
+    .stock-product-name{font-weight:900;color:#16261C;max-width:330px}
+    .stock-code{font-weight:900;color:#8A5A12;white-space:nowrap}
+    .stock-workshops{font-size:9.4px;color:#64748B;max-width:280px}
+    .stock-status{display:inline-flex;border-radius:999px;padding:4px 7px;font-size:8.8px;font-weight:950;white-space:nowrap}
+    .stock-status.ok{background:#D1FAE5;color:#065F46}.stock-status.zero{background:#FEF3C7;color:#92400E}.stock-status.neg{background:#FEE2E2;color:#991B1B}.stock-status.low{background:#FFEDD5;color:#C2410C}
+    .stock-mini-nav{display:flex;flex-wrap:wrap;gap:6px}
+    .stock-mini-nav button{border:1px solid var(--border);background:#fff;color:var(--text);border-radius:9px;padding:6px 9px;font-size:9.7px;font-weight:900;cursor:pointer}
+    .stock-mini-nav button:hover{border-color:var(--blue2);color:var(--blue)}
+    .stock-empty{padding:44px 18px;text-align:center;color:var(--muted)}
+    .stock-quality-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:7px;padding:11px}
+    .stock-quality{border:1px solid var(--border);background:#F7F2E6;border-radius:10px;padding:8px 9px;font-size:9.8px;line-height:1.4;color:#475569}
+    .stock-quality strong{color:#16261C}
+    @media(max-width:1050px){.stock-chart-grid{grid-template-columns:1fr}.stock-chart-card.wide{grid-column:auto}}
+    @media(max-width:760px){
+      .stock-hero{grid-template-columns:1fr;padding:14px}.stock-formula{white-space:normal;width:fit-content}
+      .stock-kpi-grid{grid-template-columns:repeat(2,1fr)}
+      .stock-section-head{align-items:flex-start}.stock-section-badge{white-space:normal;text-align:center}
+      body.stock-view .toolbar-card .toolbar-sep{display:none!important}
+    }
+
+
   </style>
 </head>
 <body>
@@ -1638,6 +1712,7 @@
       <button class="nav-item" data-tab="pedido-moviles" onclick="switchTab('pedido-moviles',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14l-1.5-6.5A2 2 0 0015.6 9H8.4a2 2 0 00-1.9 1.5L5 17z"/><path d="M7 17v2M17 17v2"/><circle cx="8" cy="17" r="1"/><circle cx="16" cy="17" r="1"/><path d="M8 9V6h8v3"/></svg>Pedidos de móviles <span class="nav-badge" id="badge-pedido-moviles">—</span></button>
       <div class="nav-label" style="margin-top:14px">Control directivo</div>
       <button class="nav-item" data-tab="parte-diario" onclick="switchTab('parte-diario',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Parte Diario <span class="nav-badge" id="badge-parte-diario">—</span></button>
+      <button class="nav-item" data-tab="stock-produccion-dmth" onclick="switchTab('stock-produccion-dmth',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7l8-4 8 4-8 4-8-4z"/><path d="M4 7v10l8 4 8-4V7"/><path d="M12 11v10"/><path d="M7 13h2M7 16h2"/></svg>Stock Producción DMTH <span class="nav-badge" id="badge-stock-produccion-dmth">—</span></button>
       <button class="nav-item" data-tab="indicadores-dmth" onclick="switchTab('indicadores-dmth',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5"/><path d="M4 19h17"/><rect x="7" y="11" width="3" height="5" rx="1"/><rect x="12" y="7" width="3" height="9" rx="1"/><rect x="17" y="3" width="3" height="13" rx="1"/></svg>Indicadores DMTH <span class="nav-badge" id="badge-indicadores-dmth">—</span></button>
       <div class="nav-label" style="margin-top:14px">Acciones</div>
       <button class="nav-item" onclick="showSourceStatus()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg>Estado de datos</button>
@@ -1652,8 +1727,10 @@
   </header>
   <main class="main">
     <div class="toolbar-card">
-      <div class="field"><label>Fecha desde</label><input type="date" id="g-from" value=""></div>
-      <div class="field"><label>Fecha hasta</label><input type="date" id="g-to" value=""></div>
+      <div class="field stock-date-field"><label>Fecha desde</label><input type="date" id="g-from" value=""></div>
+      <div class="field stock-date-field"><label>Fecha hasta</label><input type="date" id="g-to" value=""></div>
+      <div class="field stock-field"><label>Taller</label><select id="stock-taller" onchange="onStockTallerChange()"><option value="">Todos los talleres</option></select></div>
+      <div class="field stock-field"><label>Producto</label><select id="stock-product" onchange="renderModule()"><option value="">Todos los productos</option></select></div>
       <div class="field"><label>Tipo de solicitud</label><select id="g-tipo"><option value="">Todos</option></select></div>
       <div class="field"><label>Estado</label><div class="ms" id="ms-estado" data-key="estado"></div></div>
       <div class="field"><label>Subestado</label><div class="ms" id="ms-subestado" data-key="subestado"></div></div>
@@ -1679,6 +1756,7 @@
       </div>
       <div id="weekly-container"></div>
       <div id="daily-container"></div>
+      <div id="stock-container"></div>
       <div class="section-hdr"><h2><span>📌</span> Resumen ejecutivo</h2></div>
       <div class="summary-card" id="summary-container"></div>
       <div class="section-hdr"><h2><span>🧩</span> Tipo / categoría de solicitud</h2><span class="section-note">El análisis se adapta a Consolidado, órdenes de trabajo y pedidos de móviles.</span></div>
@@ -1719,21 +1797,66 @@ const CONFIG={
   odtProduccion:{label:'ODT PRODUCCIÓN · ORDENES',CSV_URL:'https://docs.google.com/spreadsheets/d/e/2PACX-1vTDXSk7VpcFqTKJ9njjjSaxXwOhIV3_osFEr6cEU2qq6YVMpkZi3XidtubsWNx1Y7zDl_a9rOMOG2_V/pub?gid=805220081&single=true&output=csv'},
   pedidoMoviles:{label:'PEDIDOS DE MÓVILES',CSV_URL:'https://docs.google.com/spreadsheets/d/e/2PACX-1vR57w_yP1_FfAzWryu64yqD0w61PFLsnxY-25QdMqFb69bWWyOWu6zfLYgHwQZzKWVpl5D3HT0EC7N5/pub?gid=1174281307&single=true&output=csv'}
 };
+const STOCK_SHEET_ID='1_nhd2G2H7_cRoSAgX-8I9yig-96XN-qVx5vjJ2lO5WA';
+const STOCK_CONFIG={
+  productos:{label:'DMTH · PRODUCTOS',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=818338235`},
+  rubros:{label:'DMTH · RUBROS',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=1558241024`},
+  talleres:{label:'DMTH · TALLERES',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=1822708470`},
+  productoTaller:{label:'DMTH · PRODUCTO_TALLER',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=433865220`},
+  efectores:{label:'DMTH · EFECTORES',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=225506644`},
+  producciones:{label:'DMTH · PRODUCCIONES',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=1857496512`},
+  produccionTaller:{label:'DMTH · PRODUCCION_TALLER',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=1927503351`},
+  salidas:{label:'DMTH · SALIDAS',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=700564161`},
+  salidaDetalle:{label:'DMTH · SALIDA_DETALLE',CSV_URL:`https://docs.google.com/spreadsheets/d/${STOCK_SHEET_ID}/gviz/tq?tqx=out:csv&gid=600369199`}
+};
 const DERIVAR_MAP={'DO':'Dpto. Obras','D.O.':'Dpto. Obras','OBRAS':'Dpto. Obras','DP':'Dpto. Producción','D.P.':'Dpto. Producción','PRODUCCION':'Dpto. Producción','PRODUCCIÓN':'Dpto. Producción','RF':'Recursos Físicos','R.F.':'Recursos Físicos','RECURSOS FISICOS':'Recursos Físicos','RECURSOS FÍSICOS':'Recursos Físicos'};
 const TIPO_MAP={'URGENCIA':'Urgencia','URGENTE':'Urgencia','EMERGENCIA':'Urgencia','PROGRAMADA':'Programada','PROGRAMADO':'Programada','MANTENIMIENTO':'Mantenimiento','MANT.':'Mantenimiento','MANT':'Mantenimiento','PEDIDOS DE INSUMOS':'Pedidos de insumos','PEDIDO DE INSUMOS':'Pedidos de insumos','INSUMOS':'Pedidos de insumos','PEDIDO INSUMOS':'Pedidos de insumos','PEDIDOS INSUMOS':'Pedidos de insumos','PEDIDO':'Pedidos de insumos','PEDIDOS':'Pedidos de insumos','PEDIDO DE MATERIALES':'Pedidos de insumos','PEDIDOS DE MATERIALES':'Pedidos de insumos'};
 const TIPO_ORDER=['Urgencia','Programada','Mantenimiento','Pedidos de insumos','ODT Obras','ODT Producción','Pedido de móvil','Sin tipo'];
-const TAB_META={general:{title:'Dashboard General Consolidado',sub:'Pestaña CONSOLIDADO analizada como conjunto',filter:null,source:'consolidado'},obras:{title:'Módulo Dpto. Obras',sub:'CONSOLIDADO filtrado por columna DERIVAR = DO',filter:['DO','D.O.','OBRAS'],source:'consolidado'},produccion:{title:'Módulo Dpto. Producción',sub:'CONSOLIDADO filtrado por columna DERIVAR = DP',filter:['DP','D.P.','PRODUCCION','PRODUCCIÓN'],source:'consolidado'},rf:{title:'Módulo Recursos Físicos',sub:'CONSOLIDADO filtrado por columna DERIVAR = RF',filter:['RF','R.F.','RECURSOS FISICOS','RECURSOS FÍSICOS'],source:'consolidado'},'odt-obras':{title:'Módulo Orden de Trabajo de Obras',sub:'Pestaña SOPORTE · análisis propio de órdenes, secciones, cuadrillas, materiales y destinos',filter:null,source:'odtObras'},'odt-produccion':{title:'Módulo Orden de Trabajo de Producción',sub:'Pestaña ORDENES · análisis propio de producción, talleres, materiales y destinos',filter:null,source:'odtProduccion'},'evolucion-semanal':{title:'Evolución semanal de ODT Obras',sub:'ODT OBRAS · SOPORTE · Columna A = ID · Columna C = fecha · Columna H = rubro',filter:null,source:'odtObras'},'pedido-moviles':{title:'Módulo Pedidos de Móviles',sub:'Pestaña PEDIDO MOVILES · análisis de solicitudes, rutas, urgencias, móviles, choferes y estado',filter:null,source:'pedidoMoviles'},'parte-diario':{title:'Parte Diario Supervisor',sub:'Corte ejecutivo para Dirección, mandos medios y control administrativo',filter:null,source:'consolidado',combineSources:['consolidado','odtObras','odtProduccion','pedidoMoviles']},'indicadores-dmth':{title:'Matriz de Control de Indicadores DMTH',sub:'CONSOLIDADO · indicadores de gestión, tiempos de respuesta, metas y cumplimiento',filter:null,source:'consolidado'}};
+const TAB_META={general:{title:'Dashboard General Consolidado',sub:'Pestaña CONSOLIDADO analizada como conjunto',filter:null,source:'consolidado'},obras:{title:'Módulo Dpto. Obras',sub:'CONSOLIDADO filtrado por columna DERIVAR = DO',filter:['DO','D.O.','OBRAS'],source:'consolidado'},produccion:{title:'Módulo Dpto. Producción',sub:'CONSOLIDADO filtrado por columna DERIVAR = DP',filter:['DP','D.P.','PRODUCCION','PRODUCCIÓN'],source:'consolidado'},rf:{title:'Módulo Recursos Físicos',sub:'CONSOLIDADO filtrado por columna DERIVAR = RF',filter:['RF','R.F.','RECURSOS FISICOS','RECURSOS FÍSICOS'],source:'consolidado'},'odt-obras':{title:'Módulo Orden de Trabajo de Obras',sub:'Pestaña SOPORTE · análisis propio de órdenes, secciones, cuadrillas, materiales y destinos',filter:null,source:'odtObras'},'odt-produccion':{title:'Módulo Orden de Trabajo de Producción',sub:'Pestaña ORDENES · análisis propio de producción, talleres, materiales y destinos',filter:null,source:'odtProduccion'},'evolucion-semanal':{title:'Evolución semanal de ODT Obras',sub:'ODT OBRAS · SOPORTE · Columna A = ID · Columna C = fecha · Columna H = rubro',filter:null,source:'odtObras'},'pedido-moviles':{title:'Módulo Pedidos de Móviles',sub:'Pestaña PEDIDO MOVILES · análisis de solicitudes, rutas, urgencias, móviles, choferes y estado',filter:null,source:'pedidoMoviles'},'parte-diario':{title:'Parte Diario Supervisor',sub:'Corte ejecutivo para Dirección, mandos medios y control administrativo',filter:null,source:'consolidado',combineSources:['consolidado','odtObras','odtProduccion','pedidoMoviles']},'stock-produccion-dmth':{title:'Stock Producción DMTH',sub:'Producciones confirmadas menos salidas entregadas · filtros por período, taller y producto',filter:null,source:'stockDmth'},'indicadores-dmth':{title:'Matriz de Control de Indicadores DMTH',sub:'CONSOLIDADO · indicadores de gestión, tiempos de respuesta, metas y cumplimiento',filter:null,source:'consolidado'}};
 const PALETTE=['#C08A2E','#0694A2','#10B981','#F59E0B','#8B5CF6','#F05252','#0EA5E9','#84CC16','#EC4899','#F97316','#14B8A6','#6366F1','#64748B','#0F766E','#7C3AED'];
 const STOPWORDS=new Set(['DE','DEL','LA','LAS','EL','LOS','Y','EN','A','AL','CON','POR','PARA','UNA','UNO','UN','QUE','SE','SU','SUS','SIN','SOBRE','ENTRE','O','U','E','NRO','Nº','NO','SI','ES','SON','DESDE','HASTA','AREA','SECTOR','SOLICITA','SOLICITAN','REALIZAR','TRABAJO','TRABAJOS','SERVICIO','PEDIDO','PEDIDOS','REPARACION','ARREGLO','COLOCACION','CAMBIO','CONTROL','REVISION','MANTENIMIENTO','GENERAL','ITEM','DESCRIPCION']);
-const S={raw:{consolidado:[],odtObras:[],odtProduccion:[],pedidoMoviles:[]},charts:{},activeTab:'general',lastRefresh:null,headers:[],headersBySource:{},ms:{sel:{estado:[],subestado:[],rubro:[],efector:[]},opts:{estado:[],subestado:[],rubro:[],efector:[]}},dailyFocus:'all'};
+const S={raw:{consolidado:[],odtObras:[],odtProduccion:[],pedidoMoviles:[]},stockRaw:{productos:[],rubros:[],talleres:[],productoTaller:[],efectores:[],producciones:[],produccionTaller:[],salidas:[],salidaDetalle:[]},stock:{loaded:false,loadingPromise:null,lastRefresh:null},stockCharts:{},charts:{},activeTab:'general',lastRefresh:null,headers:[],headersBySource:{},ms:{sel:{estado:[],subestado:[],rubro:[],efector:[]},opts:{estado:[],subestado:[],rubro:[],efector:[]}},dailyFocus:'all'};
 
 document.addEventListener('DOMContentLoaded',async()=>{updateClock();setInterval(updateClock,30000);await refreshAll();});
 function updateClock(){const now=new Date();document.getElementById('topbar-time').textContent=now.toLocaleString('es-AR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}
-function switchTab(tab,btnEl){S.activeTab=tab;document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));if(btnEl)btnEl.classList.add('active');const meta=TAB_META[tab]||TAB_META.general;document.getElementById('topbar-title').textContent=meta.title;document.getElementById('topbar-sub').textContent=meta.sub;closeMobileNav();if(tab==='parte-diario'&&!document.getElementById('g-from')?.value&&!document.getElementById('g-to')?.value){const d=new Date();d.setDate(d.getDate()-1);document.getElementById('g-from').value=isoLocalDate(d);document.getElementById('g-to').value=isoLocalDate(d);S.dailyRange='ayer';S.dailyFocus='all';}populateFilters();renderModule();}
-async function refreshAll(){showLoading(true);setStatus('⏳ Conectando con las fuentes publicadas...','amber');await loadAllSources();populateFilters();renderModule();updateBadges();showLoading(false);setStatus(`Datos actualizados · ${new Date().toLocaleString('es-AR')}`,'green');document.getElementById('topbar-refresh-status').textContent='✓ Datos listos';}
+async function switchTab(tab,btnEl){S.activeTab=tab;document.querySelectorAll('.nav-item').forEach(b=>b.classList.remove('active'));if(btnEl)btnEl.classList.add('active');const meta=TAB_META[tab]||TAB_META.general;document.getElementById('topbar-title').textContent=meta.title;document.getElementById('topbar-sub').textContent=meta.sub;closeMobileNav();if(tab==='parte-diario'&&!document.getElementById('g-from')?.value&&!document.getElementById('g-to')?.value){const d=new Date();d.setDate(d.getDate()-1);document.getElementById('g-from').value=isoLocalDate(d);document.getElementById('g-to').value=isoLocalDate(d);S.dailyRange='ayer';S.dailyFocus='all';}if(tab==='stock-produccion-dmth'){showLoading(true);setStatus('⏳ Cargando depósito de producción...','amber');await ensureStockSources();populateStockFilters();}else{populateFilters();}renderModule();}
+async function refreshAll(){showLoading(true);setStatus('⏳ Conectando con las fuentes publicadas...','amber');await loadAllSources();if(S.stock.loaded||S.activeTab==='stock-produccion-dmth')await ensureStockSources(true);if(S.activeTab==='stock-produccion-dmth')populateStockFilters();else populateFilters();renderModule();updateBadges();showLoading(false);setStatus(`Datos actualizados · ${new Date().toLocaleString('es-AR')}`,'green');document.getElementById('topbar-refresh-status').textContent='✓ Datos listos';}
 async function loadAllSources(){const entries=Object.entries(CONFIG);await Promise.all(entries.map(([key,cfg])=>loadCSVSource(key,cfg)));S.lastRefresh=new Date();}
 async function loadConsolidado(){return loadCSVSource('consolidado',CONFIG.consolidado);}
 async function loadCSVSource(sourceKey,cfg){const url=cfg.CSV_URL+'&t='+Date.now();try{const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw new Error(`HTTP ${res.status}`);const text=await res.text();if(text.trim().startsWith('<!'))throw new Error('El Sheet no está publicado correctamente como CSV público');const rows=csvToObjects(text,sourceKey);S.raw[sourceKey]=rows.map((r,i)=>normalizeRow(r,i,sourceKey));console.log(`[DGIME] ${cfg.label}: ${rows.length} filas cargadas`);}catch(e){console.warn(`[DGIME] No se pudo leer ${cfg.label}:`,e.message);S.raw[sourceKey]=[];setStatus(`⚠ ${cfg.label}: ${e.message}`,'amber');}}
+
+async function ensureStockSources(force=false){
+  if(S.stock.loaded&&!force)return;
+  if(S.stock.loadingPromise&&!force)return S.stock.loadingPromise;
+  S.stock.loadingPromise=(async()=>{
+    const entries=Object.entries(STOCK_CONFIG);
+    await Promise.all(entries.map(([key,cfg])=>loadStockCSVSource(key,cfg)));
+    S.stock.loaded=true;S.stock.lastRefresh=new Date();S.stock.loadingPromise=null;
+    updateBadges();
+  })();
+  return S.stock.loadingPromise;
+}
+async function loadStockCSVSource(sourceKey,cfg){
+  const url=cfg.CSV_URL+'&t='+Date.now();
+  try{
+    const res=await fetch(url,{cache:'no-store'});
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    const text=await res.text();
+    if(text.trim().startsWith('<!'))throw new Error('La pestaña no está disponible como CSV público');
+    S.stockRaw[sourceKey]=stockCsvToObjects(text,`stock-${sourceKey}`);
+    console.log(`[DGIME STOCK] ${cfg.label}: ${S.stockRaw[sourceKey].length} filas`);
+  }catch(e){
+    console.warn(`[DGIME STOCK] No se pudo leer ${cfg.label}:`,e.message);
+    S.stockRaw[sourceKey]=[];
+    setStatus(`⚠ ${cfg.label}: ${e.message}`,'amber');
+  }
+}
+function stockCsvToObjects(csvText,sourceKey){
+  const rows=parseCSV(csvText);if(rows.length<2){S.headersBySource[sourceKey]=[];return[];}
+  const headers=rows[0].map(h=>String(h||'').trim().replace(/^\uFEFF/,'').replace(/\s+/g,' '));
+  S.headersBySource[sourceKey]=headers;
+  return rows.slice(1).filter(r=>r.some(c=>String(c||'').trim())).map(row=>{const obj={};headers.forEach((h,i)=>obj[h||`COL_${i+1}`]=row[i]??'');return obj;});
+}
 
 function csvToObjects(csvText,sourceKey='consolidado'){const rows=parseCSV(csvText);if(rows.length<2){S.headersBySource[sourceKey]=[];return[];}const headers=rows[0].map(h=>String(h||'').trim().replace(/^\uFEFF/,'').replace(/\s+/g,' '));S.headers=headers;S.headersBySource[sourceKey]=headers;return rows.slice(1).filter(r=>r.some(c=>String(c||'').trim())).map(row=>{const obj={__cells:row};headers.forEach((h,i)=>{obj[h||`COL_${i+1}`]=row[i]??'';});return obj;});}
 
@@ -1878,7 +2001,7 @@ function populateFilters(){const rows=getBaseRows(S.activeTab);fillSel('g-tipo',
 function fillSel(id,vals){const el=document.getElementById(id);if(!el)return;const cur=el.value;el.innerHTML='<option value="">Todos</option>'+vals.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join('');if(vals.includes(cur))el.value=cur;}
 function sortTipo(vals){return vals.sort((a,b)=>{const ia=TIPO_ORDER.indexOf(a),ib=TIPO_ORDER.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b);});}
 function applyFilters(){renderModule();}
-function clearFilters(){['g-from','g-to','g-tipo','g-search'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});['estado','subestado','rubro','efector'].forEach(k=>{S.ms.sel[k]=[];msRender(k);});setWeeklyDefaultWeek(true);renderModule();}
+function clearFilters(){['g-from','g-to','g-tipo','g-search','stock-taller','stock-product'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});['estado','subestado','rubro','efector'].forEach(k=>{S.ms.sel[k]=[];msRender(k);});setWeeklyDefaultWeek(true);if(S.activeTab==='stock-produccion-dmth')populateStockFilters();renderModule();}
 
 /* ===== Filtros multiselección + unificación por nombre ===== */
 function msLabelTitle(v){return String(v||'').trim().replace(/\s+/g,' ');}
@@ -1936,7 +2059,7 @@ function uniqueVals(rows,key){return [...new Set(rows.map(r=>String(r[key]||'').
 function groupTipoStats(rows){const tasks=buildTasks(rows);return sortTipo([...new Set(tasks.map(r=>r.__tipo||'Sin tipo'))]).map(tipo=>{const ts=tasks.filter(r=>r.__tipo===tipo);const detail=rows.filter(r=>r.__tipo===tipo);const fin=ts.filter(r=>isFin(r.__estado)).length;const pen=ts.filter(r=>isPend(r.__estado)).length;const crit=ts.filter(r=>r.__critico||isCrit(r)).length;return{tipo,total:ts.length,filas:detail.length,finalizados:fin,pendientes:pen,criticos:crit,resolucion:pct(fin,ts.length),topRubro:topEntry(countUniqueBy(detail,'__rubro')),topEstado:topEntry(countBy(ts,'__estado'))};});}
 function calcMetrics(rows,tab){const tasks=buildTasks(rows);const total=tasks.length;const detailTotal=rows.length;const estados=countBy(tasks,'__estado'),subestados=countBy(tasks,'__subestado'),tipos=countBy(tasks,'__tipo'),sectores=countBy(tasks,'__sector'),efectores=countBy(tasks,'__efector'),derivs=countBy(tasks,'__derivar');const rubros=countUniqueBy(rows,'__rubro'),subrubros=countUniqueBy(rows,'__subrubro'),productos=countUniqueBy(rows,'__producto'),items=countUniqueBy(rows,'__item');const finalizados=tasks.filter(r=>isFin(r.__estado)).length;const pendientes=tasks.filter(r=>isPend(r.__estado)).length;const criticos=tasks.filter(r=>r.__critico||isCrit(r)).length;const conFecha=tasks.filter(r=>r.__fecha).length;const conExp=tasks.filter(r=>String(r.__expediente||'').trim()).length;const conSub=rows.filter(r=>r.__subestado&&r.__subestado!=='Sin subestado').length;const conItem=rows.filter(r=>r.__item&&r.__item!=='Sin descripción').length;const tipoStats=groupTipoStats(rows);return{tab,rows,tasks,total,detailTotal,filasAgrupadas:Math.max(0,detailTotal-total),estados,subestados,tipos,rubros,subrubros,productos,items,sectores,efectores,derivs,tipoStats,finalizados,pendientes,criticos,conFecha,sinFecha:total-conFecha,conExp,conSub,conItem,topTipo:topEntry(tipos),topEst:topEntry(estados),topSub:topEntry(subestados),topRub:topEntry(rubros),topSubrub:topEntry(subrubros),topProd:topEntry(productos),topItem:topEntry(items),topSec:topEntry(sectores),topEf:topEntry(efectores),compRate:pct(finalizados,total),pendRate:pct(pendientes,total),critRate:pct(criticos,total),dateRate:pct(conFecha,total),expRate:pct(conExp,total),subRate:pct(conSub,detailTotal),itemRate:pct(conItem,detailTotal)};}
 
-function renderModule(){showLoading(true);const isDmth=S.activeTab==='indicadores-dmth';const isWeekly=S.activeTab==='evolucion-semanal';const isDaily=S.activeTab==='parte-diario';document.body.classList.toggle('dmth-view',isDmth);document.body.classList.toggle('weekly-view',isWeekly);document.body.classList.toggle('daily-view',isDaily);const exportArea=document.getElementById('export-area');if(exportArea){exportArea.classList.toggle('dmth-only-mode',isDmth);exportArea.classList.toggle('weekly-only-mode',isWeekly);exportArea.classList.toggle('daily-only-mode',isDaily);}const rows=(isDmth||isWeekly)?getBaseRows(S.activeTab):getFilteredRows();if(isDmth){renderIndicadoresDMTH(rows);showLoading(false);return;}if(isWeekly){renderEvolucionSemanal();showLoading(false);return;}const weekly=document.getElementById('weekly-container');if(weekly)weekly.innerHTML='';const daily=document.getElementById('daily-container');if(isDaily){renderParteDiario(rows);showLoading(false);return;}if(daily)daily.innerHTML='';const m=calcMetrics(rows,S.activeTab);renderSummary(m);renderTipoCards(m);renderKPIs(m);renderVJA(m);renderFODA(m);renderInsights(m);renderRecomendaciones(m);renderCharts(rows,m);renderPareto(rows,m);renderTable(rows,m);showLoading(false);setStatus(`${fmt(m.total)} tareas únicas · ${fmt(m.detailTotal)} filas detalle · ${new Date().toLocaleTimeString('es-AR')}`,'green');}
+function renderModule(){showLoading(true);const isDmth=S.activeTab==='indicadores-dmth';const isWeekly=S.activeTab==='evolucion-semanal';const isDaily=S.activeTab==='parte-diario';const isStock=S.activeTab==='stock-produccion-dmth';document.body.classList.toggle('dmth-view',isDmth);document.body.classList.toggle('weekly-view',isWeekly);document.body.classList.toggle('daily-view',isDaily);document.body.classList.toggle('stock-view',isStock);const exportArea=document.getElementById('export-area');if(exportArea){exportArea.classList.toggle('dmth-only-mode',isDmth);exportArea.classList.toggle('weekly-only-mode',isWeekly);exportArea.classList.toggle('daily-only-mode',isDaily);exportArea.classList.toggle('stock-only-mode',isStock);}if(isStock){renderStockProduccionDMTH();showLoading(false);return;}const stock=document.getElementById('stock-container');if(stock)stock.innerHTML='';const rows=(isDmth||isWeekly)?getBaseRows(S.activeTab):getFilteredRows();if(isDmth){renderIndicadoresDMTH(rows);showLoading(false);return;}if(isWeekly){renderEvolucionSemanal();showLoading(false);return;}const weekly=document.getElementById('weekly-container');if(weekly)weekly.innerHTML='';const daily=document.getElementById('daily-container');if(isDaily){renderParteDiario(rows);showLoading(false);return;}if(daily)daily.innerHTML='';const m=calcMetrics(rows,S.activeTab);renderSummary(m);renderTipoCards(m);renderKPIs(m);renderVJA(m);renderFODA(m);renderInsights(m);renderRecomendaciones(m);renderCharts(rows,m);renderPareto(rows,m);renderTable(rows,m);showLoading(false);setStatus(`${fmt(m.total)} tareas únicas · ${fmt(m.detailTotal)} filas detalle · ${new Date().toLocaleTimeString('es-AR')}`,'green');}
 
 function toggleMobileNav(force){const open=typeof force==='boolean'?force:!document.body.classList.contains('mobile-nav-open');document.body.classList.toggle('mobile-nav-open',open);const sb=document.getElementById('sidebar');if(sb)sb.classList.toggle('open',open);}
 function closeMobileNav(){toggleMobileNav(false);}
@@ -2295,6 +2418,154 @@ function extractKeywords(rows){const o={};rows.forEach(r=>{const text=normText(r
 
 
 
+/* ─── MÓDULO STOCK PRODUCCIÓN DMTH ────────────────────────── */
+function stockRaw(key){return S.stockRaw[key]||[];}
+function stockN(v){
+  if(typeof v==='number')return Number.isFinite(v)?v:0;
+  let s=String(v??'').trim();if(!s)return 0;
+  s=s.replace(/\s/g,'').replace(/[^0-9,.-]/g,'');
+  const comma=s.lastIndexOf(','),dot=s.lastIndexOf('.');
+  if(comma>=0&&dot>=0){s=comma>dot?s.replace(/\./g,'').replace(',','.'):s.replace(/,/g,'');}
+  else if(comma>=0){s=s.replace(/\./g,'').replace(',','.');}
+  const n=Number(s);return Number.isFinite(n)?n:0;
+}
+function stockDate(v){return parseDateFlex(v);}
+function stockSetMap(rows,keyA,keyB){const map=new Map();rows.forEach(r=>{const a=String(r[keyA]||'').trim(),b=String(r[keyB]||'').trim();if(!a||!b)return;if(!map.has(a))map.set(a,new Set());map.get(a).add(b);});return map;}
+function stockSum(rows,key='cantidad'){return rows.reduce((a,r)=>a+Number(r[key]||0),0);}
+function stockPeriod(){const f=document.getElementById('g-from')?.value,t=document.getElementById('g-to')?.value;const from=f?new Date(f+'T00:00:00'):null;const to=t?new Date(t+'T23:59:59'):null;return{from,to};}
+function stockInPeriod(d,from,to){if(!d)return !from&&!to;if(from&&d<from)return false;if(to&&d>to)return false;return true;}
+function stockBefore(d,from){return !!(from&&d&&d<from);}
+function stockThrough(d,to){return !to||!d||d<=to;}
+function stockFmtQty(n){return new Intl.NumberFormat('es-AR',{maximumFractionDigits:2}).format(Number(n||0));}
+function populateStockFilters(){
+  if(!S.stock.loaded)return;
+  const tallSel=document.getElementById('stock-taller'),prodSel=document.getElementById('stock-product');if(!tallSel||!prodSel)return;
+  const oldT=tallSel.value,oldP=prodSel.value;
+  const tall=stockRaw('talleres').filter(r=>r.TallerID&&r.Taller).sort((a,b)=>String(a.Taller).localeCompare(String(b.Taller),'es'));
+  tallSel.innerHTML='<option value="">Todos los talleres</option>'+tall.map(r=>`<option value="${esc(r.TallerID)}">${esc(r.Taller)}</option>`).join('');
+  if(tall.some(r=>r.TallerID===oldT))tallSel.value=oldT;
+  const pt=stockSetMap(stockRaw('productoTaller'),'ProductoID','TallerID');
+  const prods=stockRaw('productos').filter(r=>r.ProductoID&&r.Codigo&&r.Descripcion&&(!tallSel.value||pt.get(r.ProductoID)?.has(tallSel.value))).sort((a,b)=>String(a.Descripcion).localeCompare(String(b.Descripcion),'es'));
+  prodSel.innerHTML='<option value="">Todos los productos</option>'+prods.map(r=>`<option value="${esc(r.ProductoID)}">${esc(r.Codigo)} · ${esc(truncStr(r.Descripcion,58))}</option>`).join('');
+  if(prods.some(r=>r.ProductoID===oldP))prodSel.value=oldP;
+}
+function onStockTallerChange(){const p=document.getElementById('stock-product');if(p)p.value='';populateStockFilters();renderModule();}
+function stockProductCount(){return stockRaw('productos').filter(r=>r.ProductoID&&r.Codigo&&r.Descripcion).length;}
+function buildStockProduccionDMTH(){
+  const {from,to}=stockPeriod();
+  const tallerFilter=document.getElementById('stock-taller')?.value||'';
+  const productFilter=document.getElementById('stock-product')?.value||'';
+  const products=stockRaw('productos').filter(r=>r.ProductoID&&r.Codigo&&r.Descripcion);
+  const productMap=new Map(products.map(r=>[String(r.ProductoID).trim(),r]));
+  const tallerRows=stockRaw('talleres').filter(r=>r.TallerID&&r.Taller);
+  const tallerMap=new Map(tallerRows.map(r=>[String(r.TallerID).trim(),String(r.Taller).trim()]));
+  const rubroMap=new Map(stockRaw('rubros').filter(r=>r.RubroID).map(r=>[String(r.RubroID).trim(),String(r.Rubro||r.Descripcion||r.RubroID).trim()]));
+  const efectorMap=new Map(stockRaw('efectores').filter(r=>r.EfectorID).map(r=>[String(r.EfectorID).trim(),String(r.Efector||r.Etiqueta||r.EfectorID).trim()]));
+  const productTaller=stockSetMap(stockRaw('productoTaller'),'ProductoID','TallerID');
+  const produccionTaller=stockSetMap(stockRaw('produccionTaller'),'ProduccionID','TallerID');
+  const selectedProducts=new Set(products.filter(p=>{
+    const pid=String(p.ProductoID).trim();
+    if(productFilter&&pid!==productFilter)return false;
+    if(!tallerFilter)return true;
+    return productTaller.get(pid)?.has(tallerFilter)||stockRaw('producciones').some(pr=>String(pr.ProductoID).trim()===pid&&produccionTaller.get(String(pr.ProduccionID).trim())?.has(tallerFilter));
+  }).map(p=>String(p.ProductoID).trim()));
+  const salidasMap=new Map(stockRaw('salidas').filter(r=>r.SalidaID).map(r=>[String(r.SalidaID).trim(),{
+    id:String(r.SalidaID).trim(),fecha:stockDate(r.Fecha),estado:String(r.Estado||'').trim(),efector:String(r.EfectorID||'').trim(),destino:String(r.DestinoOriginal||'').trim(),acta:r.NroActa,expediente:String(r.Expediente||'').trim(),pedido:String(r.IDPedidoDigital||'').trim()
+  }]));
+  const allProductions=stockRaw('producciones').filter(r=>r.ProduccionID&&r.ProductoID&&selectedProducts.has(String(r.ProductoID).trim())&&normText(r.Estado)==='CONFIRMADA').map(r=>{
+    const id=String(r.ProduccionID).trim(),pid=String(r.ProductoID).trim();
+    const tallIds=produccionTaller.get(id)||productTaller.get(pid)||new Set();
+    return{id,pid,fecha:stockDate(r.Fecha),cantidad:stockN(r.Cantidad),destino:String(r.Destino||'').trim()||'Sin destino',estado:String(r.Estado||'').trim(),expediente:String(r.NroExpedientePedido||'').trim(),efector:String(r.EfectorID||'').trim(),descripcionEspecial:String(r.DescripcionEspecial||'').trim(),observacion:String(r.Observacion||'').trim(),tallerIds:new Set(tallIds),talleres:[...tallIds].map(x=>tallerMap.get(x)||x)};
+  }).filter(r=>!tallerFilter||r.tallerIds.has(tallerFilter));
+  const allExits=stockRaw('salidaDetalle').filter(r=>r.DetalleID&&r.ProductoID&&selectedProducts.has(String(r.ProductoID).trim())).map(r=>{
+    const h=salidasMap.get(String(r.SalidaID||'').trim());if(!h||normText(h.estado)!=='ENTREGADA')return null;
+    return{id:String(r.DetalleID).trim(),salidaId:String(r.SalidaID||'').trim(),pid:String(r.ProductoID).trim(),cantidad:stockN(r.Cantidad),fecha:h.fecha,estado:h.estado,efector:h.efector,destino:h.destino,acta:h.acta,expediente:h.expediente,pedido:h.pedido,observacion:String(r.ObservacionDetalle||'').trim(),texto:String(r.ProductoTextoOriginal||'').trim()};
+  }).filter(Boolean);
+  const periodProductions=allProductions.filter(r=>stockInPeriod(r.fecha,from,to));
+  const periodExits=allExits.filter(r=>stockInPeriod(r.fecha,from,to));
+  const stockRows=[...selectedProducts].map(pid=>{
+    const p=productMap.get(pid)||{};
+    const pp=allProductions.filter(r=>r.pid===pid),ee=allExits.filter(r=>r.pid===pid);
+    const prodBefore=stockSum(pp.filter(r=>stockBefore(r.fecha,from)));
+    const exitBefore=stockSum(ee.filter(r=>stockBefore(r.fecha,from)));
+    const stockInitial=from?prodBefore-exitBefore:0;
+    const prodPeriod=stockSum(pp.filter(r=>stockInPeriod(r.fecha,from,to)));
+    const exitPeriod=stockSum(ee.filter(r=>stockInPeriod(r.fecha,from,to)));
+    const stockFinal=stockInitial+prodPeriod-exitPeriod;
+    const tIds=new Set(productTaller.get(pid)||[]);pp.forEach(pr=>pr.tallerIds.forEach(t=>tIds.add(t)));
+    const min=stockN(p.StockMinimo),status=stockFinal<0?'neg':stockFinal===0?'zero':min>0&&stockFinal<=min?'low':'ok';
+    return{pid,codigo:String(p.Codigo||pid),descripcion:String(p.Descripcion||pid),unidad:String(p.Unidad||'UN'),rubro:rubroMap.get(String(p.RubroID||''))||String(p.RubroID||'Sin rubro'),stockMinimo:min,talleres:[...tIds].map(x=>tallerMap.get(x)||x),stockInitial,prodPeriod,exitPeriod,stockFinal,status};
+  }).sort((a,b)=>b.stockFinal-a.stockFinal||a.descripcion.localeCompare(b.descripcion,'es'));
+  const timeline=new Map();
+  [...periodProductions.map(r=>({...r,tipo:'Producción'})),...periodExits.map(r=>({...r,tipo:'Salida'}))].forEach(r=>{if(!r.fecha)return;const k=`${r.fecha.getFullYear()}-${String(r.fecha.getMonth()+1).padStart(2,'0')}`;if(!timeline.has(k))timeline.set(k,{label:k,producido:0,salidas:0});const x=timeline.get(k);if(r.tipo==='Producción')x.producido+=r.cantidad;else x.salidas+=r.cantidad;});
+  const workshopQty={};periodProductions.forEach(r=>{const names=r.talleres.length?r.talleres:['Sin taller asignado'];names.forEach(n=>workshopQty[n]=(workshopQty[n]||0)+r.cantidad);});
+  const productQty={};periodProductions.forEach(r=>{const p=productMap.get(r.pid);const n=p?`${p.Codigo} · ${p.Descripcion}`:r.pid;productQty[n]=(productQty[n]||0)+r.cantidad;});
+  const destinationQty={};periodProductions.forEach(r=>destinationQty[r.destino]=(destinationQty[r.destino]||0)+r.cantidad);
+  const missingTaller=allProductions.filter(r=>!r.talleres.length).length;
+  const missingDates=allProductions.filter(r=>!r.fecha).length+allExits.filter(r=>!r.fecha).length;
+  const filterText=[from?`Desde ${from.toLocaleDateString('es-AR')}`:'Desde el inicio',to?`hasta ${to.toLocaleDateString('es-AR')}`:'hasta el último movimiento',tallerFilter?`Taller: ${tallerMap.get(tallerFilter)||tallerFilter}`:'Todos los talleres',productFilter?`Producto: ${(productMap.get(productFilter)?.Descripcion)||productFilter}`:'Todos los productos'].join(' · ');
+  return{from,to,tallerFilter,productFilter,productMap,tallerMap,stockRows,allProductions,allExits,periodProductions:periodProductions.sort((a,b)=>(b.fecha?.getTime()||0)-(a.fecha?.getTime()||0)),periodExits:periodExits.sort((a,b)=>(b.fecha?.getTime()||0)-(a.fecha?.getTime()||0)),timeline:[...timeline.values()].sort((a,b)=>a.label.localeCompare(b.label)),workshopQty,productQty,destinationQty,missingTaller,missingDates,filterText,totalStock:stockSum(stockRows,'stockFinal'),totalInitial:stockSum(stockRows,'stockInitial'),totalProduced:stockSum(periodProductions),totalExits:stockSum(periodExits),negative:stockRows.filter(r=>r.stockFinal<0).length,zero:stockRows.filter(r=>r.stockFinal===0).length,positive:stockRows.filter(r=>r.stockFinal>0).length};
+}
+function stockStatusLabel(r){return r.status==='neg'?'Stock negativo':r.status==='zero'?'Sin stock':r.status==='low'?'Stock bajo':'Disponible';}
+function stockDateLabel(d){return d?d.toLocaleDateString('es-AR'):'—';}
+function destroyStockCharts(){Object.values(S.stockCharts||{}).forEach(c=>{try{c.destroy();}catch(e){}});S.stockCharts={};}
+function renderStockProduccionDMTH(){
+  const cont=document.getElementById('stock-container');if(!cont)return;
+  if(!S.stock.loaded){cont.innerHTML='<div class="stock-empty"><div style="font-size:38px">📦</div><h3>Cargando datos de depósito...</h3><p>Se están leyendo las pestañas de productos, producciones, talleres y salidas.</p></div>';return;}
+  const d=buildStockProduccionDMTH();
+  if(!d.stockRows.length){cont.innerHTML='<div class="stock-empty"><div style="font-size:38px">🔍</div><h3>Sin productos para los filtros elegidos</h3><p>Probá otro taller, producto o período.</p></div>';setStatus('Sin resultados de stock','amber');return;}
+  const prodSample=d.periodProductions.slice(0,120),exitSample=d.periodExits.slice(0,120);
+  cont.innerHTML=`<div class="stock-shell">
+    <div class="stock-hero"><div><h2>📦 STOCK PRODUCCIÓN DMTH</h2><p>Control vivo del depósito a partir de las pestañas PRODUCTOS, PRODUCCIONES, PRODUCCION_TALLER, SALIDAS y SALIDA_DETALLE. La fecha genera un corte de inventario: stock inicial antes del período, movimientos dentro del período y stock al cierre.</p></div><div class="stock-formula">Producción confirmada <strong>−</strong> Salidas entregadas <strong>=</strong> Stock</div></div>
+    <div class="stock-filter-note"><strong>Filtros activos:</strong> ${esc(d.filterText)}. El filtro de taller identifica las producciones vinculadas a ese taller. Una misma producción puede intervenir en varios talleres, pero dentro de una selección se cuenta una sola vez.</div>
+    <div class="stock-mini-nav"><button onclick="document.getElementById('stock-section-stock')?.scrollIntoView({behavior:'smooth'})">Stock</button><button onclick="document.getElementById('stock-section-production')?.scrollIntoView({behavior:'smooth'})">Producción</button><button onclick="document.getElementById('stock-section-exits')?.scrollIntoView({behavior:'smooth'})">Salidas</button><button onclick="document.getElementById('stock-section-quality')?.scrollIntoView({behavior:'smooth'})">Calidad de datos</button></div>
+    <div class="stock-kpi-grid">
+      <div class="stock-kpi info"><span>Productos analizados</span><b>${fmt(d.stockRows.length)}</b><small>${fmt(d.positive)} con disponibilidad</small></div>
+      <div class="stock-kpi good"><span>Stock al cierre</span><b>${stockFmtQty(d.totalStock)}</b><small>Unidades netas del corte</small></div>
+      <div class="stock-kpi info"><span>Producido en período</span><b>${stockFmtQty(d.totalProduced)}</b><small>${fmt(d.periodProductions.length)} registros confirmados</small></div>
+      <div class="stock-kpi warn"><span>Salidas en período</span><b>${stockFmtQty(d.totalExits)}</b><small>${fmt(d.periodExits.length)} líneas entregadas</small></div>
+      <div class="stock-kpi ${d.zero?'warn':'good'}"><span>Productos sin stock</span><b>${fmt(d.zero)}</b><small>Saldo exactamente en cero</small></div>
+      <div class="stock-kpi ${d.negative?'bad':'good'}"><span>Stock negativo</span><b>${fmt(d.negative)}</b><small>${d.negative?'Requiere conciliación':'Sin inconsistencias negativas'}</small></div>
+    </div>
+    <div class="stock-chart-grid">
+      <div class="stock-chart-card"><h3>Stock disponible por producto</h3><p>Top productos según saldo al cierre del período.</p><div class="stock-chart-box"><canvas id="stock-chart-products"></canvas></div></div>
+      <div class="stock-chart-card"><h3>Producción por destino</h3><p>Cuánto fue registrado para Stock, Pedido u otros destinos.</p><div class="stock-chart-box"><canvas id="stock-chart-destination"></canvas></div></div>
+      <div class="stock-chart-card wide"><h3>Evolución de entradas y salidas</h3><p>Movimientos mensuales dentro del período filtrado.</p><div class="stock-chart-box"><canvas id="stock-chart-flow"></canvas></div></div>
+      <div class="stock-chart-card wide"><h3>Producción vinculada por taller</h3><p>Una producción puede estar vinculada a más de un taller; el gráfico representa participación operativa, no reparto de unidades.</p><div class="stock-chart-box"><canvas id="stock-chart-workshops"></canvas></div></div>
+    </div>
+    <div class="stock-section" id="stock-section-stock"><div class="stock-section-head"><div><h3>Inventario por producto</h3><p>Stock inicial + producción del período − salidas del período = stock al cierre.</p></div><span class="stock-section-badge">${fmt(d.stockRows.length)} productos</span></div><div class="stock-table-wrap"><table class="stock-table"><thead><tr><th>Código</th><th>Producto</th><th>Rubro</th><th>Unidad</th><th>Talleres vinculados</th><th>Stock inicial</th><th>Producido</th><th>Salidas</th><th>Stock al cierre</th><th>Estado</th></tr></thead><tbody>${d.stockRows.map(r=>`<tr><td class="stock-code">${esc(r.codigo)}</td><td class="stock-product-name">${esc(r.descripcion)}</td><td>${esc(truncStr(r.rubro,28))}</td><td>${esc(r.unidad)}</td><td class="stock-workshops">${esc(r.talleres.join(' · ')||'Sin taller asignado')}</td><td class="n">${stockFmtQty(r.stockInitial)}</td><td class="n">${stockFmtQty(r.prodPeriod)}</td><td class="n">${stockFmtQty(r.exitPeriod)}</td><td class="n">${stockFmtQty(r.stockFinal)}</td><td><span class="stock-status ${r.status}">${stockStatusLabel(r)}</span></td></tr>`).join('')}</tbody></table></div></div>
+    <div class="stock-section" id="stock-section-production"><div class="stock-section-head"><div><h3>Producción del período</h3><p>Detalle de PRODUCCIONES confirmadas, cruzadas con productos y talleres.</p></div><span class="stock-section-badge">${fmt(d.periodProductions.length)} registros · ${stockFmtQty(d.totalProduced)} unidades</span></div><div class="stock-table-wrap"><table class="stock-table"><thead><tr><th>Fecha</th><th>ID producción</th><th>Código</th><th>Producto</th><th>Cantidad</th><th>Destino</th><th>Talleres</th><th>Efector / expediente</th><th>Estado</th></tr></thead><tbody>${prodSample.map(r=>{const p=d.productMap.get(r.pid)||{};const ref=[r.efector?(efectorNameStock(r.efector)||r.efector):'',r.expediente].filter(Boolean).join(' · ');return`<tr><td>${stockDateLabel(r.fecha)}</td><td class="stock-code">${esc(r.id)}</td><td>${esc(p.Codigo||r.pid)}</td><td class="stock-product-name">${esc(p.Descripcion||r.pid)}</td><td class="n">${stockFmtQty(r.cantidad)}</td><td><span class="badge ${normText(r.destino)==='STOCK'?'badge-green':'badge-blue'}">${esc(r.destino)}</span></td><td class="stock-workshops">${esc(r.talleres.join(' · ')||'Sin taller asignado')}</td><td>${esc(truncStr(ref||r.descripcionEspecial||'—',44))}</td><td><span class="badge badge-green">${esc(r.estado)}</span></td></tr>`;}).join('')||'<tr><td colspan="9">Sin producciones en el período.</td></tr>'}</tbody></table></div>${d.periodProductions.length>prodSample.length?`<div class="dmth-small-note">Se muestran ${fmt(prodSample.length)} de ${fmt(d.periodProductions.length)} registros. La exportación incluye el total filtrado.</div>`:''}</div>
+    <div class="stock-section" id="stock-section-exits"><div class="stock-section-head"><div><h3>Salidas entregadas del período</h3><p>Detalle de SALIDA_DETALLE unido con fecha, estado y destino de SALIDAS.</p></div><span class="stock-section-badge">${fmt(d.periodExits.length)} líneas · ${stockFmtQty(d.totalExits)} unidades</span></div><div class="stock-table-wrap"><table class="stock-table"><thead><tr><th>Fecha</th><th>Acta / salida</th><th>Código</th><th>Producto</th><th>Cantidad</th><th>Efector / destino</th><th>Pedido / expediente</th><th>Estado</th></tr></thead><tbody>${exitSample.map(r=>{const p=d.productMap.get(r.pid)||{};const dest=efectorNameStock(r.efector)||r.destino||r.efector||'—';const ref=[r.pedido,r.expediente].filter(Boolean).join(' · ');return`<tr><td>${stockDateLabel(r.fecha)}</td><td class="stock-code">${esc(r.salidaId)}</td><td>${esc(p.Codigo||r.pid)}</td><td class="stock-product-name">${esc(p.Descripcion||r.texto||r.pid)}</td><td class="n">${stockFmtQty(r.cantidad)}</td><td>${esc(truncStr(dest,48))}</td><td>${esc(ref||'—')}</td><td><span class="badge badge-green">${esc(r.estado)}</span></td></tr>`;}).join('')||'<tr><td colspan="8">Sin salidas entregadas en el período.</td></tr>'}</tbody></table></div>${d.periodExits.length>exitSample.length?`<div class="dmth-small-note">Se muestran ${fmt(exitSample.length)} de ${fmt(d.periodExits.length)} líneas. La exportación incluye el total filtrado.</div>`:''}</div>
+    <div class="stock-section" id="stock-section-quality"><div class="stock-section-head"><div><h3>Calidad y trazabilidad de datos</h3><p>Controles para interpretar correctamente el stock.</p></div><span class="stock-section-badge">Actualizado ${S.stock.lastRefresh?S.stock.lastRefresh.toLocaleTimeString('es-AR'):'—'}</span></div><div class="stock-quality-grid"><div class="stock-quality"><strong>${fmt(d.missingTaller)}</strong> producciones no tienen taller vinculado en PRODUCCION_TALLER.</div><div class="stock-quality"><strong>${fmt(d.missingDates)}</strong> movimientos no tienen una fecha utilizable para cortes temporales.</div><div class="stock-quality">Las salidas en estado <strong>Borrador</strong> no descuentan stock; solo se consideran las marcadas como <strong>Entregada</strong>.</div><div class="stock-quality">La columna histórica <strong>StockCalculado</strong> de PRODUCTOS no se usa: el saldo se recalcula con todos los movimientos actuales.</div></div></div>
+    <div class="designer-credit">Diseñado por DI Emiliano Villagra</div>
+  </div>`;
+  renderStockCharts(d);setStatus(`${fmt(d.stockRows.length)} productos · Stock ${stockFmtQty(d.totalStock)} · ${fmt(d.periodProductions.length)} producciones · ${fmt(d.periodExits.length)} salidas`,'green');document.getElementById('topbar-refresh-status').textContent='✓ Stock actualizado';
+}
+function efectorNameStock(id){const r=stockRaw('efectores').find(x=>String(x.EfectorID||'').trim()===String(id||'').trim());return r?String(r.Efector||r.Etiqueta||'').trim():'';}
+function renderStockCharts(d){
+  destroyStockCharts();requestAnimationFrame(()=>{
+    const top=d.stockRows.filter(r=>r.stockFinal!==0).sort((a,b)=>b.stockFinal-a.stockFinal).slice(0,14);
+    const ctxP=document.getElementById('stock-chart-products');if(ctxP)S.stockCharts.products=new Chart(ctxP,{type:'bar',data:{labels:top.map(r=>truncStr(`${r.codigo} · ${r.descripcion}`,30)),datasets:[{label:'Stock al cierre',data:top.map(r=>r.stockFinal),backgroundColor:top.map(r=>r.stockFinal<0?'#F05252CC':'#C08A2ECC'),borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false}},scales:defaultScales(true,false)}});
+    const dest=Object.entries(d.destinationQty).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);const ctxD=document.getElementById('stock-chart-destination');if(ctxD&&dest.length)S.stockCharts.destination=new Chart(ctxD,{type:'doughnut',data:{labels:dest.map(x=>x[0]),datasets:[{data:dest.map(x=>x[1]),backgroundColor:dest.map((_,i)=>PALETTE[i%PALETTE.length])}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10}}}}});
+    const ctxF=document.getElementById('stock-chart-flow');if(ctxF&&d.timeline.length)S.stockCharts.flow=new Chart(ctxF,{type:'bar',data:{labels:d.timeline.map(x=>x.label),datasets:[{label:'Producido',data:d.timeline.map(x=>x.producido),backgroundColor:'#10B981CC',borderRadius:5},{label:'Salidas',data:d.timeline.map(x=>x.salidas),backgroundColor:'#F59E0BCC',borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{font:{size:10},boxWidth:10}}},scales:defaultScales(false,false)}});
+    const w=Object.entries(d.workshopQty).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]);const ctxW=document.getElementById('stock-chart-workshops');if(ctxW&&w.length)S.stockCharts.workshops=new Chart(ctxW,{type:'bar',data:{labels:w.map(x=>x[0]),datasets:[{label:'Unidades vinculadas',data:w.map(x=>x[1]),backgroundColor:w.map((_,i)=>PALETTE[i%PALETTE.length]+'CC'),borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:defaultScales(false,false)}});
+  });
+}
+function stockChartImages(){return Object.entries(S.stockCharts||{}).map(([id,c])=>{try{return{id,src:c.toBase64Image('image/png',1)}}catch(e){return null}}).filter(Boolean);}
+function exportStockProduccionCSV(){
+  const d=buildStockProduccionDMTH();if(!d.stockRows.length){toast('⚠ No hay datos de stock para exportar',3200);return;}
+  const rows=[['STOCK PRODUCCIÓN DMTH'],['Filtros',d.filterText],[],['INVENTARIO POR PRODUCTO'],['Codigo','Producto','Rubro','Unidad','Talleres','Stock inicial','Producido periodo','Salidas periodo','Stock al cierre','Estado'],...d.stockRows.map(r=>[r.codigo,r.descripcion,r.rubro,r.unidad,r.talleres.join(' | '),r.stockInitial,r.prodPeriod,r.exitPeriod,r.stockFinal,stockStatusLabel(r)]),[],['PRODUCCIONES DEL PERIODO'],['Fecha','ProduccionID','Codigo','Producto','Cantidad','Destino','Talleres','Efector','Expediente','Estado'],...d.periodProductions.map(r=>{const p=d.productMap.get(r.pid)||{};return[isoDate(r.fecha),r.id,p.Codigo||r.pid,p.Descripcion||r.pid,r.cantidad,r.destino,r.talleres.join(' | '),efectorNameStock(r.efector)||r.efector,r.expediente,r.estado]}),[],['SALIDAS ENTREGADAS DEL PERIODO'],['Fecha','SalidaID','Codigo','Producto','Cantidad','Efector/Destino','Pedido','Expediente','Estado'],...d.periodExits.map(r=>{const p=d.productMap.get(r.pid)||{};return[isoDate(r.fecha),r.salidaId,p.Codigo||r.pid,p.Descripcion||r.texto||r.pid,r.cantidad,efectorNameStock(r.efector)||r.destino||r.efector,r.pedido,r.expediente,r.estado]})];
+  downloadText(`DGIME_Stock_Produccion_DMTH_${dateStamp()}.csv`,'sep=;\r\n'+toCSV(rows,';'),'text/csv;charset=utf-8;');toast('✓ Stock y producción exportados a CSV',3200);
+}
+function exportStockProduccionPDF(){
+  const d=buildStockProduccionDMTH();if(!d.stockRows.length){toast('⚠ No hay datos para armar el PDF',3200);return;}
+  const imgs=stockChartImages();const img=id=>imgs.find(x=>x.id===id)?.src||'';const generated=new Date().toLocaleString('es-AR');
+  const stockRows=d.stockRows.map(r=>`<tr><td>${esc(r.codigo)}</td><td>${esc(r.descripcion)}</td><td>${esc(r.talleres.join(' · ')||'Sin taller')}</td><td class="n">${stockFmtQty(r.stockInitial)}</td><td class="n">${stockFmtQty(r.prodPeriod)}</td><td class="n">${stockFmtQty(r.exitPeriod)}</td><td class="n">${stockFmtQty(r.stockFinal)}</td><td>${stockStatusLabel(r)}</td></tr>`).join('');
+  const prodRows=d.periodProductions.slice(0,120).map(r=>{const p=d.productMap.get(r.pid)||{};return`<tr><td>${stockDateLabel(r.fecha)}</td><td>${esc(r.id)}</td><td>${esc(p.Codigo||r.pid)}</td><td>${esc(p.Descripcion||r.pid)}</td><td class="n">${stockFmtQty(r.cantidad)}</td><td>${esc(r.destino)}</td><td>${esc(r.talleres.join(' · ')||'Sin taller')}</td></tr>`}).join('');
+  const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Stock Producción DMTH</title><style>*{box-sizing:border-box}body{font-family:Segoe UI,Arial,sans-serif;color:#1E293B;margin:0;background:#fff}.page{padding:10mm 11mm;min-height:190mm;page-break-after:always}.page:last-child{page-break-after:auto}.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #C08A2E;padding-bottom:8px;margin-bottom:10px}.title{font-size:20px;font-weight:950;color:#16261C}.sub{font-size:9px;color:#64748B;margin-top:3px}.meta{text-align:right;font-size:8.5px;color:#475569;line-height:1.45}.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:9px 0}.kpi{border:1px solid #E8E0CC;border-radius:9px;padding:8px;background:#F7F2E6}.kpi span{display:block;font-size:7px;text-transform:uppercase;color:#64748B;font-weight:900}.kpi b{display:block;font-size:16px;color:#16261C;margin-top:4px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:8px}.chart{border:1px solid #E8E0CC;border-radius:9px;padding:7px}.chart h3{font-size:9px;margin:0 0 4px}.chart img{width:100%;height:155px;object-fit:contain}.sec{font-size:15px;font-weight:950;color:#16261C;margin:4px 0 7px}.note{font-size:8px;color:#64748B;line-height:1.4;margin-bottom:7px}table{width:100%;border-collapse:collapse;font-size:7.2px}th{background:#16261C;color:#fff;text-align:left;padding:4px;border:1px solid #334155}td{padding:3.5px 4px;border:1px solid #CBD5E1;vertical-align:top}tr:nth-child(even) td{background:#F7F2E6}.n{text-align:right}.footer{margin-top:8px;border-top:1px solid #E8E0CC;padding-top:5px;font-size:7.5px;color:#64748B;display:flex;justify-content:space-between}@media print{@page{size:A4 landscape;margin:0}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{break-after:page}.page:last-child{break-after:auto}}</style></head><body><div class="page"><div class="head"><div><div class="title">STOCK PRODUCCIÓN DMTH</div><div class="sub">${esc(d.filterText)}</div></div><div class="meta">Generado: ${esc(generated)}<br>Fuente: DEPOSITO PRODUCCION<br>Productos: ${fmt(d.stockRows.length)}</div></div><div class="kpis"><div class="kpi"><span>Stock al cierre</span><b>${stockFmtQty(d.totalStock)}</b></div><div class="kpi"><span>Stock inicial</span><b>${stockFmtQty(d.totalInitial)}</b></div><div class="kpi"><span>Producido</span><b>${stockFmtQty(d.totalProduced)}</b></div><div class="kpi"><span>Salidas</span><b>${stockFmtQty(d.totalExits)}</b></div><div class="kpi"><span>Sin stock</span><b>${fmt(d.zero)}</b></div><div class="kpi"><span>Negativos</span><b>${fmt(d.negative)}</b></div></div><div class="charts">${img('products')?`<div class="chart"><h3>Stock por producto</h3><img src="${img('products')}"></div>`:''}${img('destination')?`<div class="chart"><h3>Producción por destino</h3><img src="${img('destination')}"></div>`:''}${img('flow')?`<div class="chart"><h3>Entradas y salidas</h3><img src="${img('flow')}"></div>`:''}${img('workshops')?`<div class="chart"><h3>Producción por taller</h3><img src="${img('workshops')}"></div>`:''}</div><div class="footer"><span>Dirección General de Infraestructura, Mantenimiento y Equipamiento</span><span>Diseñado por DI Emiliano Villagra</span></div></div><div class="page"><div class="head"><div><div class="title">Inventario por producto</div><div class="sub">Stock inicial + producción − salidas = stock al cierre</div></div><div class="meta">${esc(d.filterText)}</div></div><table><thead><tr><th>Código</th><th>Producto</th><th>Talleres</th><th>Inicial</th><th>Producido</th><th>Salidas</th><th>Final</th><th>Estado</th></tr></thead><tbody>${stockRows}</tbody></table><div class="footer"><span>Stock recalculado desde movimientos actuales</span><span>${fmt(d.stockRows.length)} productos</span></div></div><div class="page"><div class="head"><div><div class="title">Producción del período</div><div class="sub">Registros confirmados; se muestran hasta 120 en el PDF</div></div><div class="meta">${fmt(d.periodProductions.length)} registros · ${stockFmtQty(d.totalProduced)} unidades</div></div><table><thead><tr><th>Fecha</th><th>ID</th><th>Código</th><th>Producto</th><th>Cantidad</th><th>Destino</th><th>Talleres</th></tr></thead><tbody>${prodRows||'<tr><td colspan="7">Sin producciones en el período.</td></tr>'}</tbody></table><div class="note">Las salidas en Borrador no descuentan stock. Una producción puede estar vinculada a varios talleres; dentro del filtro se contabiliza una sola vez.</div><div class="footer"><span>Fuente: PRODUCCIONES + PRODUCCION_TALLER</span><span>Generado ${esc(generated)}</span></div></div></body></html>`;
+  const win=window.open('','_blank','width=1400,height=900,menubar=yes,toolbar=yes,scrollbars=yes');if(!win){toast('⚠ El navegador bloqueó la ventana emergente. Permitila y reintentá.',5000);return;}win.document.write(html);win.document.close();win.focus();win.onload=()=>setTimeout(()=>win.print(),450);
+}
+
 /* ─── MÓDULO INDICADORES DMTH ─────────────────────────────── */
 const DMTH_YEAR=2026;
 const DMTH_MONTHS=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
@@ -2453,9 +2724,10 @@ function exportIndicadoresPDF(){
 }
 
 function renderTable(rows){const sample=rows.slice(0,40);const cont=document.getElementById('table-container');if(!sample.length){cont.innerHTML=`<div class="empty-state"><div class="es-icon">🔍</div><h3>Sin resultados</h3><p>No hay registros con los filtros actuales. Ajustá el período o eliminá filtros.</p></div>`;return;}const BADGE={'FINALIZADO':'badge-green','FINALIZADA':'badge-green','EN PROCESO':'badge-blue','RECIBIDO':'badge-amber','NO CALIFICA':'badge-gray','MAL CARGADO':'badge-gray','ANULADO':'badge-gray','CANCELADO':'badge-gray'};cont.innerHTML=`<div class="table-header"><h3>Muestra de registros (${sample.length} de ${fmt(rows.length)})</h3><span style="font-size:11px;color:var(--muted)">Tipo, Estado y Subestado se muestran separados</span></div><div class="table-wrap"><table class="dt"><thead><tr><th>Fecha</th><th>Derivar</th><th>Tipo solicitud</th><th>Estado</th><th>Subestado</th><th>Rubro</th><th>Descripción del ítem</th><th>Sector / Área</th><th>Efector</th><th>Expediente</th></tr></thead><tbody>${sample.map(r=>{const badgeCls=BADGE[normText(r.__estado)]||'badge-gray';const tipoCls=r.__tipo==='Urgencia'?'badge-red':r.__tipo==='Mantenimiento'?'badge-teal':r.__tipo==='Pedidos de insumos'?'badge-orange':'badge-gray';return`<tr><td style="white-space:nowrap">${r.__fecha?r.__fecha.toLocaleDateString('es-AR'):'—'}</td><td><span class="badge badge-blue">${esc(r.__derivar)}</span></td><td><span class="badge ${tipoCls}">${esc(r.__tipo)}</span></td><td><span class="badge ${badgeCls}">${esc(r.__estado)}</span></td><td><span class="badge badge-purple">${esc(r.__subestado)}</span></td><td>${esc(truncStr(r.__rubro,32))}</td><td>${esc(truncStr(r.__item,52))}</td><td>${esc(truncStr(r.__sector,25))}</td><td>${esc(truncStr(r.__efector,28))}</td><td>${r.__expediente?`<span class="badge badge-teal">${esc(r.__expediente)}</span>`:'—'}</td></tr>`;}).join('')}</tbody></table></div>`;}
-function updateBadges(){Object.keys(TAB_META).forEach(t=>{const el=document.getElementById(`badge-${t}`);if(el)el.textContent=fmt(buildTasks(getBaseRows(t)).length);});}
-function showSourceStatus(){const ts=S.lastRefresh?S.lastRefresh.toLocaleTimeString('es-AR'):'no cargado';const msg=Object.entries(CONFIG).map(([k,cfg])=>`${cfg.label}: ${fmt((S.raw[k]||[]).length)}`).join(' · ');toast(`📊 ${msg} · ${ts}`,6500);}
+function updateBadges(){Object.keys(TAB_META).forEach(t=>{const el=document.getElementById(`badge-${t}`);if(!el)return;if(t==='stock-produccion-dmth'){el.textContent=S.stock.loaded?fmt(stockProductCount()):'—';return;}el.textContent=fmt(buildTasks(getBaseRows(t)).length);});}
+function showSourceStatus(){const ts=S.lastRefresh?S.lastRefresh.toLocaleTimeString('es-AR'):'no cargado';const msg=Object.entries(CONFIG).map(([k,cfg])=>`${cfg.label}: ${fmt((S.raw[k]||[]).length)}`).join(' · ');const stockMsg=S.stock.loaded?` · STOCK DMTH: ${fmt(stockProductCount())} productos / ${fmt(stockRaw('producciones').filter(r=>r.ProduccionID).length)} producciones / ${fmt(stockRaw('salidaDetalle').filter(r=>r.DetalleID).length)} salidas detalle`:'';toast(`📊 ${msg}${stockMsg} · ${ts}`,7500);}
 function exportCSV(){
+  if(S.activeTab==='stock-produccion-dmth'){exportStockProduccionCSV();return;}
   if(S.activeTab==='indicadores-dmth'){exportIndicadoresCSV();return;}
   if(S.activeTab==='evolucion-semanal'){exportEvolucionSemanalCSV();return;}
   const rows=getFilteredRows();
@@ -2475,6 +2747,7 @@ function exportCSV(){
   toast(`✓ CSV exportado · ${fmt(rows.length)} filas`,3200);
 }
 function exportPDF(){
+  if(S.activeTab==='stock-produccion-dmth'){exportStockProduccionPDF();return;}
   if(S.activeTab==='indicadores-dmth'){exportIndicadoresPDF();return;}
   if(S.activeTab==='evolucion-semanal'){exportEvolucionSemanalPDF();return;}
   const rows=getFilteredRows();
