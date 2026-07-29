@@ -10,10 +10,10 @@
   <style>
     :root{
       
-      --navy:#0D1B2A;
-      --navy2:#162232;
-      --blue:#1A56DB;
-      --blue2:#2563EB;
+      --navy:#16261C;
+      --navy2:#0E1A13;
+      --blue:#C08A2E;
+      --blue2:#D9A441;
       --teal:#0694A2;
       --teal2:#06B6D4;
       
@@ -26,18 +26,18 @@
       
       --purple:#6C2BD9;
       --purple2:#8B5CF6;
-      --bg:#F1F5F9;
+      --bg:#F5F0E1;
       --card:#FFFFFF;
-      --border:#E2E8F0;
-      --soft:#F8FAFC;
+      --border:#E8E0CC;
+      --soft:#F7F2E6;
       
       --text:#1E293B;
-      --muted:#64748B;
+      --muted:#6B6355;
       --sidebar-w:232px;
       --radius:16px;
       
-      --shadow:0 4px 18px rgba(15,23,42,.07);
-      --shadow-lg:0 12px 34px rgba(15,23,42,.12);
+      --shadow:0 4px 18px rgba(22,38,28,.07);
+      --shadow-lg:0 12px 34px rgba(22,38,28,.14);
       
     
     }
@@ -54,7 +54,7 @@
     
     body{
       font-family:'Segoe UI',system-ui,Arial,sans-serif;
-      background:linear-gradient(135deg,#F8FAFC,#EEF5FB);
+      background:linear-gradient(135deg,#FBF8F1,#F3ECDA);
       color:var(--text);
       font-size:14px;
       display:flex;
@@ -66,13 +66,15 @@
       width:var(--sidebar-w);
       background:linear-gradient(180deg,var(--navy),var(--navy2));
       position:fixed;
-      top:0;
-      left:0;
-      bottom:0;
+      top:14px;
+      left:14px;
+      bottom:14px;
+      border-radius:22px;
       z-index:100;
       display:flex;
       flex-direction:column;
-      box-shadow:8px 0 22px rgba(15,23,42,.16)
+      overflow:hidden;
+      box-shadow:0 14px 32px rgba(22,38,28,.28)
     }
     
     .sidebar-brand{
@@ -87,13 +89,13 @@
       width:38px;
       height:38px;
       border-radius:13px;
-      background:linear-gradient(135deg,var(--blue),var(--teal));
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
       display:flex;
       align-items:center;
       justify-content:center;
       color:white;
       font-size:19px;
-      box-shadow:0 12px 24px rgba(6,148,162,.22)
+      box-shadow:0 12px 24px rgba(192,138,46,.28)
     }
     
     .brand-text{
@@ -151,7 +153,7 @@
     .nav-item.active{
       background:linear-gradient(135deg,var(--blue),var(--blue2));
       color:#fff;
-      box-shadow:0 8px 20px rgba(37,99,235,.32)
+      box-shadow:0 8px 20px rgba(192,138,46,.32)
     }
     
     .nav-item svg{
@@ -185,7 +187,7 @@
       width:34px;
       height:34px;
       border-radius:50%;
-      background:linear-gradient(135deg,var(--teal),var(--blue));
+      background:linear-gradient(135deg,var(--blue2),var(--blue));
       display:flex;
       align-items:center;
       justify-content:center;
@@ -204,18 +206,20 @@
     
     .topbar{
       position:fixed;
-      top:0;
-      left:var(--sidebar-w);
-      right:0;
+      top:14px;
+      left:calc(var(--sidebar-w) + 28px);
+      right:14px;
       height:62px;
       z-index:90;
-      background:rgba(248,250,252,.88);
+      background:rgba(255,253,247,.9);
       backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow);
       display:flex;
       align-items:center;
       gap:14px;
-      padding:0 25px
+      padding:0 22px
     }
     .topbar-title{
       font-weight:900;
@@ -233,8 +237,8 @@
       font-size:11px;
       font-weight:800;
       color:var(--blue);
-      background:#EFF6FF;
-      border:1px solid #BFDBFE;
+      background:#FBF1DC;
+      border:1px solid #EAD9A6;
       border-radius:10px;
       padding:7px 11px
     }
@@ -249,10 +253,11 @@
     }
     
     .main{
-      margin-left:var(--sidebar-w);
-      margin-top:62px;
-      padding:22px 25px 38px;
-      min-height:calc(100vh - 62px);
+      margin-left:calc(var(--sidebar-w) + 28px);
+      margin-right:14px;
+      margin-top:90px;
+      padding:0 3px 38px;
+      min-height:calc(100vh - 90px);
       flex:1
     }
     .toolbar-card,.summary-card,.chart-card,.table-card,.analysis-card,.foda-box,.tipo-card{
@@ -291,7 +296,7 @@
       border:1px solid var(--border);
       border-radius:11px;
       padding:9px 11px;
-      background:#F8FAFC;
+      background:#F7F2E6;
       color:var(--text);
       outline:none;
       font-size:13px;
@@ -299,7 +304,7 @@
     }
     .field input:focus,.field select:focus{
       border-color:var(--blue2);
-      box-shadow:0 0 0 3px rgba(37,99,235,.11);
+      box-shadow:0 0 0 3px rgba(192,138,46,.11);
       background:white
     }
     .toolbar-sep{
@@ -310,23 +315,23 @@
     }
     /* ==== Filtros multiselección (estado / subestado / rubro / efector) ==== */
     .ms{position:relative;font-size:13px}
-    .ms-control{border:1px solid var(--border);border-radius:11px;padding:9px 11px;background:#F8FAFC;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px;box-sizing:border-box;transition:all .15s ease}
+    .ms-control{border:1px solid var(--border);border-radius:11px;padding:9px 11px;background:#F7F2E6;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px;box-sizing:border-box;transition:all .15s ease}
     .ms-control:hover{border-color:var(--blue2)}
-    .ms.open .ms-control{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(37,99,235,.11);background:#fff}
+    .ms.open .ms-control{border-color:var(--blue2);box-shadow:0 0 0 3px rgba(192,138,46,.11);background:#fff}
     .ms-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
     .ms-text.placeholder{color:var(--muted)}
     .ms-caret{flex:none;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin-top:-4px;transition:transform .15s ease}
     .ms.open .ms-caret{transform:rotate(-135deg);margin-top:2px}
     .ms-panel{position:absolute;z-index:60;top:calc(100% + 5px);left:0;right:0;min-width:215px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(15,23,42,.18);padding:8px;display:none;max-height:300px;flex-direction:column}
     .ms.open .ms-panel{display:flex}
-    .ms-search{border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:12.5px;outline:none;margin-bottom:6px;width:100%;box-sizing:border-box;color:var(--text);background:#F8FAFC}
+    .ms-search{border:1px solid var(--border);border-radius:9px;padding:7px 9px;font-size:12.5px;outline:none;margin-bottom:6px;width:100%;box-sizing:border-box;color:var(--text);background:#F7F2E6}
     .ms-search:focus{border-color:var(--blue2);background:#fff}
     .ms-actions{display:flex;gap:6px;margin-bottom:6px}
     .ms-act{flex:1;border:1px solid var(--border);background:#fff;border-radius:8px;padding:5px 6px;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer}
     .ms-act:hover{color:var(--blue);border-color:var(--blue2)}
     .ms-list{overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:1px}
     .ms-opt{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:8px;cursor:pointer;line-height:1.3}
-    .ms-opt:hover{background:#F1F5F9}
+    .ms-opt:hover{background:#F5F0E1}
     .ms-opt input{width:15px;height:15px;flex:none;accent-color:var(--blue);margin:0;cursor:pointer}
     .ms-opt span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .ms-empty{padding:10px 8px;color:var(--muted);font-size:12px;text-align:center}
@@ -350,7 +355,7 @@
     .btn-primary{
       background:var(--blue2);
       color:#fff;
-      box-shadow:0 8px 18px rgba(37,99,235,.24)
+      box-shadow:0 8px 18px rgba(192,138,46,.24)
     }
     .btn-primary:hover,.btn-teal:hover,.btn-green:hover{
       transform:translateY(-1px);
@@ -376,7 +381,7 @@
       font-size:11px;
       color:var(--muted);
       padding:7px 12px;
-      background:#F8FAFC;
+      background:#F7F2E6;
       border:1px solid var(--border);
       border-radius:10px
     }
@@ -440,9 +445,9 @@
       font-weight:850;
       border-radius:999px;
       padding:6px 10px;
-      background:#EFF6FF;
-      color:#1D4ED8;
-      border:1px solid #BFDBFE
+      background:#FBF1DC;
+      color:#8A5A12;
+      border:1px solid #EAD9A6
     }
     
     .kpi-grid{
@@ -508,7 +513,7 @@
       color:#475569;
       margin-top:9px;
       padding-top:9px;
-      border-top:1px dashed #E2E8F0
+      border-top:1px dashed #E8E0CC
     }
     .kpi-delta{
       display:inline-flex;
@@ -527,8 +532,8 @@
       color:#991B1B
     }
     .delta-neu{
-      background:#EFF6FF;
-      color:#1D4ED8
+      background:#FBF1DC;
+      color:#8A5A12
     }
     
     .tipo-grid{
@@ -564,8 +569,8 @@
       gap:8px
     }
     .tipo-stat{
-      background:#F8FAFC;
-      border:1px solid #E2E8F0;
+      background:#F7F2E6;
+      border:1px solid #E8E0CC;
       border-radius:12px;
       padding:9px
     }
@@ -599,7 +604,7 @@
       margin-bottom:12px
     }
     .ac-ver{
-      background:#EFF6FF;
+      background:#FBF1DC;
       color:var(--blue)
     }
     .ac-juzgar{
@@ -728,7 +733,7 @@
       border-collapse:collapse
     }
     table.dt th{
-      background:#F8FAFC;
+      background:#F7F2E6;
       color:var(--muted);
       font-size:10.5px;
       font-weight:950;
@@ -747,7 +752,7 @@
       vertical-align:middle
     }
     table.dt tr:hover td{
-      background:#F8FAFC
+      background:#F7F2E6
     }
     .badge{
       display:inline-flex;
@@ -759,7 +764,7 @@
     }
     .badge-blue{
       background:#DBEAFE;
-      color:#1D4ED8
+      color:#8A5A12
     }
     .badge-green{
       background:#D1FAE5;
@@ -774,7 +779,7 @@
       color:#991B1B
     }
     .badge-gray{
-      background:#F1F5F9;
+      background:#F5F0E1;
       color:#64748B
     }
     .badge-purple{
@@ -966,7 +971,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      border-bottom:3px solid #1A56DB;
+      border-bottom:3px solid #C08A2E;
       padding-bottom:14px;
       margin-bottom:16px
     }
@@ -979,7 +984,7 @@
       width:48px;
       height:48px;
       border-radius:14px;
-      background:linear-gradient(135deg,#0D1B2A,#1A56DB);
+      background:linear-gradient(135deg,#16261C,#C08A2E);
       color:white;
       display:flex;
       align-items:center;
@@ -988,7 +993,7 @@
       font-weight:950;
       letter-spacing:.4px
     }
-    .pdf-title-main{font-size:23px;font-weight:950;color:#0D1B2A;line-height:1.05}
+    .pdf-title-main{font-size:23px;font-weight:950;color:#16261C;line-height:1.05}
     .pdf-title-sub{font-size:11px;color:#64748B;margin-top:4px;font-weight:700}
     .pdf-meta-box{text-align:right;font-size:10.5px;color:#475569;line-height:1.45}
     .pdf-page-title{
@@ -998,30 +1003,30 @@
       gap:16px;
       margin:6px 0 14px
     }
-    .pdf-page-title h1{font-size:26px;color:#0D1B2A;letter-spacing:-.6px;margin:0}
+    .pdf-page-title h1{font-size:26px;color:#16261C;letter-spacing:-.6px;margin:0}
     .pdf-page-title p{font-size:12px;color:#64748B;margin-top:4px;max-width:620px;line-height:1.35}
-    .pdf-pill{display:inline-flex;padding:5px 10px;border-radius:999px;background:#EFF6FF;color:#1D4ED8;font-weight:900;font-size:10px;border:1px solid #BFDBFE}
+    .pdf-pill{display:inline-flex;padding:5px 10px;border-radius:999px;background:#FBF1DC;color:#8A5A12;font-weight:900;font-size:10px;border:1px solid #EAD9A6}
     .pdf-kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0 14px}
-    .pdf-kpi{border:1px solid #DDE7F2;border-radius:14px;padding:12px;background:linear-gradient(180deg,#FFFFFF,#F8FAFC);box-shadow:0 4px 12px rgba(15,23,42,.06)}
+    .pdf-kpi{border:1px solid #E8E0CC;border-radius:14px;padding:12px;background:linear-gradient(180deg,#FFFFFF,#F7F2E6);box-shadow:0 4px 12px rgba(15,23,42,.06)}
     .pdf-kpi-label{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:#64748B;font-weight:950}
-    .pdf-kpi-value{font-size:24px;line-height:1;font-weight:950;color:#0D1B2A;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pdf-kpi-value{font-size:24px;line-height:1;font-weight:950;color:#16261C;margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .pdf-kpi-note{font-size:10px;color:#64748B;margin-top:6px;line-height:1.25}
     .pdf-grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:10px}
-    .pdf-card{border:1px solid #DDE7F2;border-radius:14px;background:#fff;padding:14px;box-shadow:0 4px 12px rgba(15,23,42,.05)}
-    .pdf-card h2{font-size:14px;color:#0D1B2A;margin:0 0 8px;font-weight:950}
+    .pdf-card{border:1px solid #E8E0CC;border-radius:14px;background:#fff;padding:14px;box-shadow:0 4px 12px rgba(15,23,42,.05)}
+    .pdf-card h2{font-size:14px;color:#16261C;margin:0 0 8px;font-weight:950}
     .pdf-card p,.pdf-card li{font-size:11.5px;line-height:1.5;color:#334155}
     .pdf-card ul{padding-left:18px;margin:6px 0 0}
     .pdf-chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:8px}
-    .pdf-chart-card{border:1px solid #DDE7F2;border-radius:14px;background:#FFFFFF;padding:10px 12px;min-height:220px;box-shadow:0 4px 12px rgba(15,23,42,.05)}
-    .pdf-chart-title{font-size:11px;font-weight:950;color:#0D1B2A;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .pdf-chart-card{border:1px solid #E8E0CC;border-radius:14px;background:#FFFFFF;padding:10px 12px;min-height:220px;box-shadow:0 4px 12px rgba(15,23,42,.05)}
+    .pdf-chart-title{font-size:11px;font-weight:950;color:#16261C;margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
     .pdf-chart-card img{display:block;width:100%;height:178px;object-fit:contain;background:#fff}
     .pdf-table{width:100%;border-collapse:collapse;font-size:9.7px;margin-top:6px}
-    .pdf-table th{background:#0D1B2A;color:white;text-align:left;padding:6px;border:1px solid #0D1B2A;font-size:8.8px;text-transform:uppercase;letter-spacing:.25px}
-    .pdf-table td{padding:5px 6px;border:1px solid #E2E8F0;color:#334155;vertical-align:top}
-    .pdf-table tr:nth-child(even) td{background:#F8FAFC}
+    .pdf-table th{background:#16261C;color:white;text-align:left;padding:6px;border:1px solid #16261C;font-size:8.8px;text-transform:uppercase;letter-spacing:.25px}
+    .pdf-table td{padding:5px 6px;border:1px solid #E8E0CC;color:#334155;vertical-align:top}
+    .pdf-table tr:nth-child(even) td{background:#F7F2E6}
     .pdf-top-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-    .pdf-footer{position:absolute;left:34px;right:34px;bottom:14px;border-top:1px solid #E2E8F0;padding-top:7px;display:flex;justify-content:space-between;color:#64748B;font-size:9.5px}
-    .pdf-section-tag{font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:#1D4ED8;font-weight:950;margin-bottom:4px}
+    .pdf-footer{position:absolute;left:34px;right:34px;bottom:14px;border-top:1px solid #E8E0CC;padding-top:7px;display:flex;justify-content:space-between;color:#64748B;font-size:9.5px}
+    .pdf-section-tag{font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:#8A5A12;font-weight:950;margin-bottom:4px}
 
     /* ── RECOMENDACIONES ESTRATÉGICAS ── */
     .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:6px}
@@ -1052,28 +1057,28 @@
     /* ── MÓDULO INDICADORES DMTH ── */
     .dmth-panel{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;animation:fadeUp .34s ease both}
     .dmth-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;align-items:stretch}
-    .dmth-hero-main{background:linear-gradient(135deg,#0D1B2A,#1A56DB);color:white;border-radius:15px;padding:17px 18px;box-shadow:var(--shadow-lg)}
+    .dmth-hero-main{background:linear-gradient(135deg,#16261C,#C08A2E);color:white;border-radius:15px;padding:17px 18px;box-shadow:var(--shadow-lg)}
     .dmth-hero-main h3{font-size:16px;font-weight:950;margin-bottom:7px;color:#fff}
     .dmth-hero-main p{font-size:11.5px;line-height:1.5;color:rgba(255,255,255,.82)}
     .dmth-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .dmth-mini{background:#F8FAFC;border:1px solid var(--border);border-radius:13px;padding:10px}
+    .dmth-mini{background:#F7F2E6;border:1px solid var(--border);border-radius:13px;padding:10px}
     .dmth-mini span{display:block;font-size:9px;text-transform:uppercase;color:var(--muted);font-weight:950;letter-spacing:.4px}
     .dmth-mini b{display:block;font-size:17px;margin-top:4px;color:var(--text)}
     .dmth-chip-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-    .dmth-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:900;border-radius:999px;padding:5px 8px;border:1px solid #BFDBFE;background:#EFF6FF;color:#1D4ED8}
+    .dmth-chip{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:900;border-radius:999px;padding:5px 8px;border:1px solid #EAD9A6;background:#FBF1DC;color:#8A5A12}
     .dmth-matrix{width:100%;min-width:1180px;border-collapse:separate;border-spacing:0;font-size:10.5px}
-    .dmth-matrix th{position:sticky;top:0;background:#0D1B2A;color:#fff;padding:7px 8px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.25px;z-index:1}
-    .dmth-matrix td{border-bottom:1px solid #E2E8F0;border-right:1px solid #E2E8F0;padding:6px 8px;vertical-align:middle;background:#fff}
-    .dmth-matrix tr:nth-child(even) td{background:#F8FAFC}
+    .dmth-matrix th{position:sticky;top:0;background:#16261C;color:#fff;padding:7px 8px;text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.25px;z-index:1}
+    .dmth-matrix td{border-bottom:1px solid #E8E0CC;border-right:1px solid #E8E0CC;padding:6px 8px;vertical-align:middle;background:#fff}
+    .dmth-matrix tr:nth-child(even) td{background:#F7F2E6}
     .dmth-matrix .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-    .dmth-matrix .process{font-weight:900;color:#0D1B2A;max-width:170px}
-    .dmth-matrix .indicator{font-weight:900;color:#1D4ED8;max-width:150px}
+    .dmth-matrix .process{font-weight:900;color:#16261C;max-width:170px}
+    .dmth-matrix .indicator{font-weight:900;color:#8A5A12;max-width:150px}
     .dmth-matrix .variable{max-width:170px;color:#334155}
     .dmth-ok{background:#D1FAE5!important;color:#065F46!important;font-weight:950!important;text-align:center;border-radius:0}
     .dmth-bad{background:#FEE2E2!important;color:#991B1B!important;font-weight:950!important;text-align:center;border-radius:0}
     .dmth-warn{background:#FEF3C7!important;color:#92400E!important;font-weight:950!important;text-align:center;border-radius:0}
-    .dmth-na{background:#F1F5F9!important;color:#64748B!important;text-align:center}
-    .dmth-meta{font-weight:950;color:#475569;background:#F8FAFC!important;white-space:nowrap}
+    .dmth-na{background:#F5F0E1!important;color:#64748B!important;text-align:center}
+    .dmth-meta{font-weight:950;color:#475569;background:#F7F2E6!important;white-space:nowrap}
     .dmth-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .dmth-ind-card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:13px;position:relative;overflow:hidden}
     .dmth-ind-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue2)}
@@ -1113,27 +1118,27 @@
     body.dmth-view .toolbar-card .btn-ghost{display:none!important}
     body.dmth-view .toolbar-card{justify-content:flex-end}
     .dmth-matrix-shell{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;animation:fadeUp .34s ease both}
-    .dmth-matrix-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:13px 15px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#FFFFFF,#F8FAFC)}
+    .dmth-matrix-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;padding:13px 15px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,#FFFFFF,#F7F2E6)}
     .dmth-matrix-top h3{font-size:14px;font-weight:950;color:var(--navy);margin:0}
     .dmth-matrix-top p{font-size:10.3px;color:var(--muted);line-height:1.35;margin-top:3px}
     .dmth-matrix-top .right{font-size:10px;color:var(--muted);text-align:right;line-height:1.4;white-space:nowrap}
-    .dmth-part-title{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:#EFF6FF;border-top:1px solid #BFDBFE;border-bottom:1px solid #BFDBFE;color:#1D4ED8;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.35px}
+    .dmth-part-title{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 13px;background:#FBF1DC;border-top:1px solid #EAD9A6;border-bottom:1px solid #EAD9A6;color:#8A5A12;font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.35px}
     .dmth-part-title span{font-size:10px;color:#64748B;text-transform:none;letter-spacing:0;font-weight:750}
     .dmth-matrix2{width:100%;min-width:2050px;border-collapse:separate;border-spacing:0;font-size:9.6px}
-    .dmth-matrix2 th{background:#0D1B2A;color:white;padding:6px 6px;text-align:center;font-size:8.3px;text-transform:uppercase;letter-spacing:.2px;position:sticky;top:0;z-index:1;border-right:1px solid rgba(255,255,255,.16)}
+    .dmth-matrix2 th{background:#16261C;color:white;padding:6px 6px;text-align:center;font-size:8.3px;text-transform:uppercase;letter-spacing:.2px;position:sticky;top:0;z-index:1;border-right:1px solid rgba(255,255,255,.16)}
     .dmth-matrix2 th.left{text-align:left;position:sticky;left:0;z-index:3}
-    .dmth-matrix2 td{border-bottom:1px solid #E2E8F0;border-right:1px solid #E2E8F0;padding:6px 6px;background:white;vertical-align:middle;text-align:center}
-    .dmth-matrix2 tr:nth-child(even) td{background:#F8FAFC}
-    .dmth-matrix2 td.left{position:sticky;left:0;z-index:2;background:#fff;text-align:left;font-weight:900;color:#0D1B2A;min-width:145px;max-width:180px}
-    .dmth-matrix2 tr:nth-child(even) td.left{background:#F8FAFC}
+    .dmth-matrix2 td{border-bottom:1px solid #E8E0CC;border-right:1px solid #E8E0CC;padding:6px 6px;background:white;vertical-align:middle;text-align:center}
+    .dmth-matrix2 tr:nth-child(even) td{background:#F7F2E6}
+    .dmth-matrix2 td.left{position:sticky;left:0;z-index:2;background:#fff;text-align:left;font-weight:900;color:#16261C;min-width:145px;max-width:180px}
+    .dmth-matrix2 tr:nth-child(even) td.left{background:#F7F2E6}
     .dmth-matrix2 .desc{text-align:left;color:#334155;min-width:170px;max-width:210px}
-    .dmth-matrix2 .meta{font-weight:950;background:#F8FAFC;color:#475569;white-space:nowrap}
+    .dmth-matrix2 .meta{font-weight:950;background:#F7F2E6;color:#475569;white-space:nowrap}
     .dmth-matrix2 .n{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
     .dmth-matrix2 .pct{font-weight:950;text-align:center;white-space:nowrap}
-    .dmth-month-head{background:#162232!important}
-    .dmth-period-head{background:#1A56DB!important}
+    .dmth-month-head{background:#0E1A13!important}
+    .dmth-period-head{background:#C08A2E!important}
     .dmth-row-sep td{border-top:2px solid #CBD5E1}
-    .dmth-small-note{padding:9px 13px;font-size:10px;color:var(--muted);line-height:1.45;background:#F8FAFC;border-top:1px solid var(--border)}
+    .dmth-small-note{padding:9px 13px;font-size:10px;color:var(--muted);line-height:1.45;background:#F7F2E6;border-top:1px solid var(--border)}
     @media(max-width:760px){.dmth-matrix2{min-width:1850px}.dmth-matrix-top{display:block}.dmth-matrix-top .right{text-align:left;margin-top:6px}}
 
     @media print{
@@ -1164,9 +1169,9 @@
     ============================================================ */
     :root{
       --sidebar-w:188px;
-      --radius:12px;
-      --shadow:0 3px 12px rgba(15,23,42,.06);
-      --shadow-lg:0 8px 22px rgba(15,23,42,.10);
+      --radius:18px;
+      --shadow:0 3px 12px rgba(22,38,28,.06);
+      --shadow-lg:0 8px 22px rgba(22,38,28,.12);
     }
 
     body{
@@ -1249,9 +1254,9 @@
     }
 
     .main{
-      margin-top:48px;
+      margin-top:76px;
       padding:12px 14px 24px;
-      min-height:calc(100vh - 48px);
+      min-height:calc(100vh - 76px);
       max-width:100%;
       overflow-x:hidden;
     }
@@ -1513,8 +1518,8 @@
     }
 
     @media(max-width:760px){
-      .topbar{height:52px;}
-      .main{margin-top:52px;padding:10px;}
+      .topbar{height:52px;top:10px;left:10px;right:10px;}
+      .main{margin-top:76px;margin-left:10px;margin-right:10px;padding:10px;}
       .toolbar-card{display:flex;flex-direction:column;align-items:stretch;}
       .field{max-width:none;width:100%;}
       .kpi-grid,.tipo-grid,.analysis-grid,.foda-grid,.insight-list,.charts-grid{grid-template-columns:1fr;}
@@ -1554,7 +1559,7 @@
     .weekly-chart-card .chart-box{height:290px}
     .weekly-note{font-size:11px;color:var(--muted);line-height:1.45;margin-top:7px}
     .weekly-table{width:100%;border-collapse:collapse;min-width:720px}
-    .weekly-table th{background:#F8FAFC;color:var(--muted);font-size:9.5px;font-weight:950;text-transform:uppercase;letter-spacing:.3px;text-align:left;padding:8px;border-bottom:1px solid var(--border)}
+    .weekly-table th{background:#F7F2E6;color:var(--muted);font-size:9.5px;font-weight:950;text-transform:uppercase;letter-spacing:.3px;text-align:left;padding:8px;border-bottom:1px solid var(--border)}
     .weekly-table td{font-size:11px;color:var(--text);padding:8px;border-bottom:1px solid var(--border)}
     .weekly-table .n{text-align:right;font-variant-numeric:tabular-nums}
     @media(max-width:760px){.weekly-chart-card .chart-box{height:245px}.weekly-table{min-width:620px}}
@@ -1580,7 +1585,7 @@
     .daily-only-mode > #charts-container,
     .daily-only-mode > #table-container{display:none!important}
     .daily-shell{display:grid;gap:12px}
-    .daily-hero{background:linear-gradient(135deg,#0D1B2A,#1A56DB);color:#fff;border-radius:15px;padding:15px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+    .daily-hero{background:linear-gradient(135deg,#16261C,#C08A2E);color:#fff;border-radius:15px;padding:15px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
     .daily-hero h2{font-size:16px;margin:0 0 5px;font-weight:950;color:#fff}
     .daily-hero p{font-size:11.2px;line-height:1.45;color:rgba(255,255,255,.82);margin:0}
     .daily-status{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:950;white-space:nowrap}
@@ -1601,9 +1606,9 @@
     .daily-panel p,.daily-panel li{font-size:11px;line-height:1.45;color:#334155}
     .daily-panel ul{padding-left:16px;margin-top:6px}
     .daily-list{display:grid;gap:6px;margin-top:6px}
-    .daily-row{display:flex;justify-content:space-between;gap:8px;border:1px solid #E2E8F0;background:#F8FAFC;border-radius:10px;padding:7px 8px;font-size:10.5px;color:#334155}
-    .daily-row strong{color:#0D1B2A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.daily-row b{font-variant-numeric:tabular-nums;color:#1D4ED8}
-    .daily-textbox{width:100%;min-height:150px;border:1px solid var(--border);border-radius:12px;background:#F8FAFC;padding:10px;font-family:'Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.45;color:#1E293B;resize:vertical}
+    .daily-row{display:flex;justify-content:space-between;gap:8px;border:1px solid #E8E0CC;background:#F7F2E6;border-radius:10px;padding:7px 8px;font-size:10.5px;color:#334155}
+    .daily-row strong{color:#16261C;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.daily-row b{font-variant-numeric:tabular-nums;color:#8A5A12}
+    .daily-textbox{width:100%;min-height:150px;border:1px solid var(--border);border-radius:12px;background:#F7F2E6;padding:10px;font-family:'Segoe UI',Arial,sans-serif;font-size:11px;line-height:1.45;color:#1E293B;resize:vertical}
     .daily-text-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
     @media(max-width:760px){
       .mobile-menu-btn{display:inline-flex;align-items:center;justify-content:center}
@@ -1718,7 +1723,7 @@ const DERIVAR_MAP={'DO':'Dpto. Obras','D.O.':'Dpto. Obras','OBRAS':'Dpto. Obras'
 const TIPO_MAP={'URGENCIA':'Urgencia','URGENTE':'Urgencia','EMERGENCIA':'Urgencia','PROGRAMADA':'Programada','PROGRAMADO':'Programada','MANTENIMIENTO':'Mantenimiento','MANT.':'Mantenimiento','MANT':'Mantenimiento','PEDIDOS DE INSUMOS':'Pedidos de insumos','PEDIDO DE INSUMOS':'Pedidos de insumos','INSUMOS':'Pedidos de insumos','PEDIDO INSUMOS':'Pedidos de insumos','PEDIDOS INSUMOS':'Pedidos de insumos','PEDIDO':'Pedidos de insumos','PEDIDOS':'Pedidos de insumos','PEDIDO DE MATERIALES':'Pedidos de insumos','PEDIDOS DE MATERIALES':'Pedidos de insumos'};
 const TIPO_ORDER=['Urgencia','Programada','Mantenimiento','Pedidos de insumos','ODT Obras','ODT Producción','Pedido de móvil','Sin tipo'];
 const TAB_META={general:{title:'Dashboard General Consolidado',sub:'Pestaña CONSOLIDADO analizada como conjunto',filter:null,source:'consolidado'},obras:{title:'Módulo Dpto. Obras',sub:'CONSOLIDADO filtrado por columna DERIVAR = DO',filter:['DO','D.O.','OBRAS'],source:'consolidado'},produccion:{title:'Módulo Dpto. Producción',sub:'CONSOLIDADO filtrado por columna DERIVAR = DP',filter:['DP','D.P.','PRODUCCION','PRODUCCIÓN'],source:'consolidado'},rf:{title:'Módulo Recursos Físicos',sub:'CONSOLIDADO filtrado por columna DERIVAR = RF',filter:['RF','R.F.','RECURSOS FISICOS','RECURSOS FÍSICOS'],source:'consolidado'},'odt-obras':{title:'Módulo Orden de Trabajo de Obras',sub:'Pestaña SOPORTE · análisis propio de órdenes, secciones, cuadrillas, materiales y destinos',filter:null,source:'odtObras'},'odt-produccion':{title:'Módulo Orden de Trabajo de Producción',sub:'Pestaña ORDENES · análisis propio de producción, talleres, materiales y destinos',filter:null,source:'odtProduccion'},'evolucion-semanal':{title:'Evolución semanal de ODT Obras',sub:'ODT OBRAS · SOPORTE · Columna A = ID · Columna C = fecha · Columna H = rubro',filter:null,source:'odtObras'},'pedido-moviles':{title:'Módulo Pedidos de Móviles',sub:'Pestaña PEDIDO MOVILES · análisis de solicitudes, rutas, urgencias, móviles, choferes y estado',filter:null,source:'pedidoMoviles'},'parte-diario':{title:'Parte Diario Supervisor',sub:'Corte ejecutivo para Dirección, mandos medios y control administrativo',filter:null,source:'consolidado',combineSources:['consolidado','odtObras','odtProduccion','pedidoMoviles']},'indicadores-dmth':{title:'Matriz de Control de Indicadores DMTH',sub:'CONSOLIDADO · indicadores de gestión, tiempos de respuesta, metas y cumplimiento',filter:null,source:'consolidado'}};
-const PALETTE=['#1A56DB','#0694A2','#10B981','#F59E0B','#8B5CF6','#F05252','#0EA5E9','#84CC16','#EC4899','#F97316','#14B8A6','#6366F1','#64748B','#0F766E','#7C3AED'];
+const PALETTE=['#C08A2E','#0694A2','#10B981','#F59E0B','#8B5CF6','#F05252','#0EA5E9','#84CC16','#EC4899','#F97316','#14B8A6','#6366F1','#64748B','#0F766E','#7C3AED'];
 const STOPWORDS=new Set(['DE','DEL','LA','LAS','EL','LOS','Y','EN','A','AL','CON','POR','PARA','UNA','UNO','UN','QUE','SE','SU','SUS','SIN','SOBRE','ENTRE','O','U','E','NRO','Nº','NO','SI','ES','SON','DESDE','HASTA','AREA','SECTOR','SOLICITA','SOLICITAN','REALIZAR','TRABAJO','TRABAJOS','SERVICIO','PEDIDO','PEDIDOS','REPARACION','ARREGLO','COLOCACION','CAMBIO','CONTROL','REVISION','MANTENIMIENTO','GENERAL','ITEM','DESCRIPCION']);
 const S={raw:{consolidado:[],odtObras:[],odtProduccion:[],pedidoMoviles:[]},charts:{},activeTab:'general',lastRefresh:null,headers:[],headersBySource:{},ms:{sel:{estado:[],subestado:[],rubro:[],efector:[]},opts:{estado:[],subestado:[],rubro:[],efector:[]}},dailyFocus:'all'};
 
@@ -1983,10 +1988,10 @@ function renderEvolucionSemanal(){destroyCharts();const data=buildWeeklyEvolutio
       <div class="table-card"><div class="table-header"><h3>Detalle diario de la semana</h3><span style="font-size:11px;color:var(--muted)">${esc(rangeTxt)}</span></div><div class="table-wrap"><table class="weekly-table"><thead><tr><th>Día</th><th>ODT Obras</th><th>Total</th></tr></thead><tbody>${dayRows}</tbody></table></div></div>
       <div class="table-card"><div class="table-header"><h3>Muestra de ODT ejecutadas (${fmt(Math.min(data.tasks.length,35))} de ${fmt(data.tasks.length)})</h3><span style="font-size:11px;color:var(--muted)">Agrupadas por ID único de orden</span></div><div class="table-wrap"><table class="weekly-table"><thead><tr><th>Fecha</th><th>Fuente</th><th>Orden</th><th>Rubro</th><th>Tarea</th><th>Destino</th></tr></thead><tbody>${sample||'<tr><td colspan="6">Sin ODT ejecutadas para los filtros seleccionados.</td></tr>'}</tbody></table></div></div>
       <div class="designer-credit">Diseñado por DI Emiliano Villagra</div>
-    </div>`;const ctx=document.getElementById('weekly-chart');if(ctx){S.charts['weekly-chart']=new Chart(ctx,{type:'bar',data:{labels:data.days.map(d=>d.label),datasets:[{label:'ODT Obras',data:data.days.map(d=>d.obras),backgroundColor:'#1A56DB'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{footer:items=>`Total: ${items.reduce((s,i)=>s+Number(i.raw||0),0)}`}}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,ticks:{precision:0}}}}});}setStatus(`${fmt(data.total)} ODT ejecutadas · ${esc(rangeTxt)} · ${new Date().toLocaleTimeString('es-AR')}`,'green');}
+    </div>`;const ctx=document.getElementById('weekly-chart');if(ctx){S.charts['weekly-chart']=new Chart(ctx,{type:'bar',data:{labels:data.days.map(d=>d.label),datasets:[{label:'ODT Obras',data:data.days.map(d=>d.obras),backgroundColor:'#C08A2E'}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{footer:items=>`Total: ${items.reduce((s,i)=>s+Number(i.raw||0),0)}`}}},scales:{x:{grid:{display:false}},y:{beginAtZero:true,ticks:{precision:0}}}}});}setStatus(`${fmt(data.total)} ODT ejecutadas · ${esc(rangeTxt)} · ${new Date().toLocaleTimeString('es-AR')}`,'green');}
 function exportEvolucionSemanalCSV(){const data=buildWeeklyEvolutionData();const rangeTxt=`${data.range.start.toLocaleDateString('es-AR')} al ${data.range.end.toLocaleDateString('es-AR')}`;const resumen=[['Semana',rangeTxt],['Rubros',data.rubroLabel],['Total ejecutadas',data.total],['ODT Obras',data.obras],['Fuente','ODT Obras · SOPORTE'],[]];const dias=[['Día','Fecha','ODT Obras','Total'],...data.days.map((d,i)=>[WEEKLY_DAY_NAMES[i],isoDate(d.date),d.obras,d.total])];const detalle=[[],['Detalle de ODT ejecutadas'],['Fecha','Fuente','Orden','Rubro','Tarea','Destino','Estado'],...data.tasks.map(t=>[isoDate(t.__weeklyDate),'ODT Obras',t.__id||'',t.__rubro||'',t.__item||'',t.__efector||'',t.__estado||''])];const csv='sep=;\r\n'+toCSV([...resumen,...dias,...detalle],';');downloadText(`DGIME_Evolucion_Semanal_ODT_${data.range.weekStr}_${dateStamp()}.csv`,csv,'text/csv;charset=utf-8;');toast(`✓ CSV evolución semanal exportado · ${fmt(data.total)} ODT`,3200);}
 function exportEvolucionSemanalPDF(){const data=buildWeeklyEvolutionData();const chart=getReportChartImages_ids(['weekly-chart'])[0];const rangeTxt=`${fmtDateLong(data.range.start)} al ${fmtDateLong(data.range.end)}`;const genDate=new Date().toLocaleString('es-AR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});const dayRows=data.days.map(d=>`<tr><td>${esc(d.label)}</td><td class="n">${fmt(d.obras)}</td><td class="n"><strong>${fmt(d.total)}</strong></td></tr>`).join('');const detailRows=data.tasks.slice(0,28).map(t=>`<tr><td>${t.__weeklyDate?esc(t.__weeklyDate.toLocaleDateString('es-AR')):'—'}</td><td>${esc(t.__source==='odtProduccion'?'ODT Producción':'ODT Obras')}</td><td>${esc(truncStr(t.__id,16))}</td><td>${esc(truncStr(t.__rubro,24))}</td><td>${esc(truncStr(t.__item,44))}</td><td>${esc(truncStr(t.__efector,24))}</td></tr>`).join('');const img=chart?.src?`<img src="${chart.src}" style="width:100%;max-height:330px;object-fit:contain;display:block;background:#fff">`:`<p>Sin imagen de gráfico disponible. Abra el módulo antes de exportar para capturar el gráfico.</p>`;const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>DGIME · Evolución semanal ODT</title><style>
-    @page{size:A4 landscape;margin:10mm}body{font-family:'Segoe UI',Arial,sans-serif;color:#1E293B;margin:0;background:#fff;font-size:10pt}.hdr{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #1A56DB;padding-bottom:10px;margin-bottom:12px}.brand{display:flex;align-items:center;gap:10px}.mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#0D1B2A,#1A56DB);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:950}.title{font-size:20pt;font-weight:950;color:#0D1B2A;line-height:1}.sub{font-size:9pt;color:#64748B;margin-top:3px}.meta{text-align:right;font-size:8.5pt;color:#475569;line-height:1.45}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}.kpi{border:1px solid #DDE7F2;border-radius:11px;padding:10px;background:#F8FAFC}.kpi span{font-size:7.5pt;text-transform:uppercase;color:#64748B;font-weight:900}.kpi b{display:block;font-size:18pt;color:#0D1B2A;margin-top:4px}.card{border:1px solid #DDE7F2;border-radius:12px;padding:10px;margin-top:10px;break-inside:avoid}.card h2{font-size:12pt;margin:0 0 7px;color:#0D1B2A}p,li{font-size:9.2pt;line-height:1.4}table{width:100%;border-collapse:collapse;font-size:8.4pt}th{background:#0D1B2A;color:#fff;text-align:left;padding:6px;border:1px solid #0D1B2A}td{padding:5px 6px;border:1px solid #E2E8F0;vertical-align:top}tr:nth-child(even) td{background:#F8FAFC}.n{text-align:right}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ftr{margin-top:12px;border-top:1px solid #E2E8F0;padding-top:6px;color:#64748B;font-size:8pt;display:flex;justify-content:space-between}@media print{.no-print{display:none}}
+    @page{size:A4 landscape;margin:10mm}body{font-family:'Segoe UI',Arial,sans-serif;color:#1E293B;margin:0;background:#fff;font-size:10pt}.hdr{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #C08A2E;padding-bottom:10px;margin-bottom:12px}.brand{display:flex;align-items:center;gap:10px}.mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#16261C,#C08A2E);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:950}.title{font-size:20pt;font-weight:950;color:#16261C;line-height:1}.sub{font-size:9pt;color:#64748B;margin-top:3px}.meta{text-align:right;font-size:8.5pt;color:#475569;line-height:1.45}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}.kpi{border:1px solid #E8E0CC;border-radius:11px;padding:10px;background:#F7F2E6}.kpi span{font-size:7.5pt;text-transform:uppercase;color:#64748B;font-weight:900}.kpi b{display:block;font-size:18pt;color:#16261C;margin-top:4px}.card{border:1px solid #E8E0CC;border-radius:12px;padding:10px;margin-top:10px;break-inside:avoid}.card h2{font-size:12pt;margin:0 0 7px;color:#16261C}p,li{font-size:9.2pt;line-height:1.4}table{width:100%;border-collapse:collapse;font-size:8.4pt}th{background:#16261C;color:#fff;text-align:left;padding:6px;border:1px solid #16261C}td{padding:5px 6px;border:1px solid #E8E0CC;vertical-align:top}tr:nth-child(even) td{background:#F7F2E6}.n{text-align:right}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ftr{margin-top:12px;border-top:1px solid #E8E0CC;padding-top:6px;color:#64748B;font-size:8pt;display:flex;justify-content:space-between}@media print{.no-print{display:none}}
   </style></head><body>
   <div class="hdr"><div class="brand"><div class="mark">DG</div><div><div class="title">Evolución semanal de ODT ejecutadas</div><div class="sub">ODT Obras · SOPORTE · ${esc(rangeTxt)}</div></div></div><div class="meta"><strong>DGIME · SIPROSA</strong><br>Generado: ${esc(genDate)}<br>Rubros: ${esc(data.rubroLabel)}</div></div>
   <div class="card"><h2>Resumen ejecutivo</h2><p>El informe muestra la evolución diaria de órdenes de trabajo de Obras durante la semana seleccionada. Se agrupa por ID único de orden para evitar duplicar registros cuando una misma ODT tiene varias líneas de materiales o detalle. En ODT Obras · SOPORTE se toma columna A como ID, columna C como fecha y columna H como rubro.</p></div>
@@ -2046,7 +2051,7 @@ function mkParetoChart(canvasId, data, dimensionLabel){
   const acums=data.map(d=>d.acum);
   // Índice del 80%
   const idx80=data.findIndex(d=>d.acum>=80);
-  const barColors=data.map((_,i)=>i<=idx80?'#1A56DBCC':'#CBD5E1CC');
+  const barColors=data.map((_,i)=>i<=idx80?'#C08A2ECC':'#CBD5E1CC');
   return new Chart(ctx,{
     type:'bar',
     data:{
@@ -2441,7 +2446,7 @@ function exportIndicadoresPDF(){
   const matrix=document.getElementById('table-container')?.innerHTML||'';
   const filters='Sin filtros manuales · segmentación mensual automática enero-diciembre 2026';
   const genDate=new Date().toLocaleString('es-AR');
-  const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Matriz DMTH</title><style>*{box-sizing:border-box}body{font-family:Segoe UI,Arial,sans-serif;color:#1E293B;margin:0;background:#fff}.page{padding:8mm}.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #1A56DB;padding-bottom:8px;margin-bottom:8px}.brand{font-size:18px;font-weight:900;color:#0D1B2A}.sub{font-size:10px;color:#64748B;margin-top:3px}.meta{text-align:right;font-size:9px;color:#475569;line-height:1.45}.dmth-matrix-shell{border:0;box-shadow:none}.dmth-matrix-top{display:none}.dmth-part-title{font-size:10px;font-weight:900;color:#1D4ED8;background:#EFF6FF;border:1px solid #BFDBFE;padding:5px 7px;margin-top:6px}.dmth-part-title span{font-size:8px;color:#64748B;font-weight:700;text-transform:none}.table-wrap{overflow:visible}.dmth-matrix2{width:100%;border-collapse:collapse;font-size:6.6px}.dmth-matrix2 th{background:#0D1B2A;color:#fff;padding:3px;text-align:center;border:1px solid #334155;text-transform:uppercase}.dmth-matrix2 td{border:1px solid #CBD5E1;padding:2px 3px;text-align:center}.dmth-matrix2 .left,.dmth-matrix2 .desc{text-align:left}.dmth-matrix2 .n{text-align:right}.dmth-ok{background:#D1FAE5!important;color:#065F46!important;font-weight:900}.dmth-bad{background:#FEE2E2!important;color:#991B1B!important;font-weight:900}.dmth-warn{background:#FEF3C7!important;color:#92400E!important;font-weight:900}.dmth-na{background:#F1F5F9!important;color:#64748B!important}.dmth-small-note{font-size:8px;color:#64748B;margin-top:6px}.footer{border-top:1px solid #E2E8F0;margin-top:8px;padding-top:5px;font-size:8px;color:#64748B;display:flex;justify-content:space-between}@media print{@page{size:A3 landscape;margin:7mm}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:0}.dmth-part-title,.dmth-matrix2{break-inside:avoid}}</style></head><body><div class="page"><div class="head"><div><div class="brand">Matriz de Control de Indicadores · DMTH-DGIME · ${DMTH_YEAR}</div><div class="sub">Fuente: CONSOLIDADO · Filtros: ${esc(filters)}</div></div><div class="meta"><strong>Generado:</strong><br>${esc(genDate)}<br><strong>Registros únicos:</strong> ${fmt(dmth.tasks.length)}</div></div>${matrix}<div class="footer"><span>Dirección General de Infraestructura, Mantenimiento y Equipamiento</span><span>Diseñado por DI Emiliano Villagra</span></div></div></body></html>`;
+  const html=`<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Matriz DMTH</title><style>*{box-sizing:border-box}body{font-family:Segoe UI,Arial,sans-serif;color:#1E293B;margin:0;background:#fff}.page{padding:8mm}.head{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #C08A2E;padding-bottom:8px;margin-bottom:8px}.brand{font-size:18px;font-weight:900;color:#16261C}.sub{font-size:10px;color:#64748B;margin-top:3px}.meta{text-align:right;font-size:9px;color:#475569;line-height:1.45}.dmth-matrix-shell{border:0;box-shadow:none}.dmth-matrix-top{display:none}.dmth-part-title{font-size:10px;font-weight:900;color:#8A5A12;background:#FBF1DC;border:1px solid #EAD9A6;padding:5px 7px;margin-top:6px}.dmth-part-title span{font-size:8px;color:#64748B;font-weight:700;text-transform:none}.table-wrap{overflow:visible}.dmth-matrix2{width:100%;border-collapse:collapse;font-size:6.6px}.dmth-matrix2 th{background:#16261C;color:#fff;padding:3px;text-align:center;border:1px solid #334155;text-transform:uppercase}.dmth-matrix2 td{border:1px solid #CBD5E1;padding:2px 3px;text-align:center}.dmth-matrix2 .left,.dmth-matrix2 .desc{text-align:left}.dmth-matrix2 .n{text-align:right}.dmth-ok{background:#D1FAE5!important;color:#065F46!important;font-weight:900}.dmth-bad{background:#FEE2E2!important;color:#991B1B!important;font-weight:900}.dmth-warn{background:#FEF3C7!important;color:#92400E!important;font-weight:900}.dmth-na{background:#F5F0E1!important;color:#64748B!important}.dmth-small-note{font-size:8px;color:#64748B;margin-top:6px}.footer{border-top:1px solid #E8E0CC;margin-top:8px;padding-top:5px;font-size:8px;color:#64748B;display:flex;justify-content:space-between}@media print{@page{size:A3 landscape;margin:7mm}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page{padding:0}.dmth-part-title,.dmth-matrix2{break-inside:avoid}}</style></head><body><div class="page"><div class="head"><div><div class="brand">Matriz de Control de Indicadores · DMTH-DGIME · ${DMTH_YEAR}</div><div class="sub">Fuente: CONSOLIDADO · Filtros: ${esc(filters)}</div></div><div class="meta"><strong>Generado:</strong><br>${esc(genDate)}<br><strong>Registros únicos:</strong> ${fmt(dmth.tasks.length)}</div></div>${matrix}<div class="footer"><span>Dirección General de Infraestructura, Mantenimiento y Equipamiento</span><span>Diseñado por DI Emiliano Villagra</span></div></div></body></html>`;
   const win=window.open('','_blank','width=1400,height=900,menubar=yes,toolbar=yes,scrollbars=yes');
   if(!win){toast('⚠ El navegador bloqueó la ventana emergente. Permitila y reintentá.',5000);return;}
   win.document.write(html);win.document.close();win.focus();win.onload=()=>setTimeout(()=>win.print(),400);
@@ -2496,13 +2501,13 @@ function buildPrintReportHTML(rows,m,charts){
   const man=m.tipoStats.find(x=>x.tipo==='Mantenimiento')||{total:0,finalizados:0,pendientes:0,resolucion:0,topRubro:['—',0]};
   const ins=m.tipoStats.find(x=>x.tipo==='Pedidos de insumos')||{total:0,finalizados:0,pendientes:0,resolucion:0,topRubro:['—',0]};
   const kpis=[
-    {label:'Tareas únicas',value:fmt(m.total),note:`${fmt(m.detailTotal)} filas · ${fmt(m.filasAgrupadas)} agrupadas`,color:'#1A56DB'},
+    {label:'Tareas únicas',value:fmt(m.total),note:`${fmt(m.detailTotal)} filas · ${fmt(m.filasAgrupadas)} agrupadas`,color:'#C08A2E'},
     {label:'Finalizadas',value:fmt(m.finalizados),note:`${m.compRate}% resolución global`,color:'#057A55'},
     {label:'Pendientes activos',value:fmt(m.pendientes),note:`${m.pendRate}% del total filtrado`,color:'#B45309'},
     {label:'Señales críticas',value:fmt(m.criticos),note:`${m.critRate}% con prioridad/demora`,color:'#C81E1E'},
     {label:'Urgencias finalizadas',value:fmt(urg.finalizados),note:`${urg.resolucion||0}% de ${fmt(urg.total||0)} urgencias`,color:'#6C2BD9'},
     {label:'Mantenimiento finaliz.',value:fmt(man.finalizados),note:`${man.resolucion||0}% de ${fmt(man.total||0)}`,color:'#0694A2'},
-    {label:'Insumos finalizados',value:fmt(ins.finalizados),note:`${ins.resolucion||0}% de ${fmt(ins.total||0)}`,color:'#1A56DB'},
+    {label:'Insumos finalizados',value:fmt(ins.finalizados),note:`${ins.resolucion||0}% de ${fmt(ins.total||0)}`,color:'#C08A2E'},
     {label:'Rubro dominante',value:truncStr(m.topRub[0]||'—',18),note:`${fmt(m.topRub[1]||0)} tareas únicas`,color:'#057A55'}
   ];
   const kpiHTML=kpis.map(k=>`<div class="kpi"><div class="kpi-bar" style="background:${k.color};-webkit-print-color-adjust:exact;print-color-adjust:exact"></div><div class="kpi-label">${esc(k.label)}</div><div class="kpi-value" style="color:${k.color};-webkit-print-color-adjust:exact;print-color-adjust:exact">${esc(k.value)}</div><div class="kpi-note">${esc(k.note)}</div></div>`).join('');
@@ -2542,12 +2547,12 @@ function buildPrintReportHTML(rows,m,charts){
   const nivelBg={rojo:'#FEE2E2',amarillo:'#FEF3C7',verde:'#D1FAE5'};
   const nivelLabel={rojo:'🔴 Atención urgente',amarillo:'🟡 Monitorear',verde:'🟢 En buen camino'};
   const recHTML=recs.map(r=>`
-    <div class="pdf-rec" style="border-top:3px solid ${nivelColor[r.nivel]||'#1A56DB'};-webkit-print-color-adjust:exact;print-color-adjust:exact">
+    <div class="pdf-rec" style="border-top:3px solid ${nivelColor[r.nivel]||'#C08A2E'};-webkit-print-color-adjust:exact;print-color-adjust:exact">
       <div class="pdf-rec-head">
-        <span class="pdf-rec-ico" style="background:${nivelBg[r.nivel]||'#EFF6FF'};-webkit-print-color-adjust:exact;print-color-adjust:exact">${r.icono}</span>
+        <span class="pdf-rec-ico" style="background:${nivelBg[r.nivel]||'#FBF1DC'};-webkit-print-color-adjust:exact;print-color-adjust:exact">${r.icono}</span>
         <div>
           <div class="pdf-rec-title">${esc(r.titulo)}</div>
-          <span class="pdf-rec-badge" style="background:${nivelBg[r.nivel]||'#EFF6FF'};color:${nivelColor[r.nivel]||'#1A56DB'};-webkit-print-color-adjust:exact;print-color-adjust:exact">${nivelLabel[r.nivel]||''}</span>
+          <span class="pdf-rec-badge" style="background:${nivelBg[r.nivel]||'#FBF1DC'};color:${nivelColor[r.nivel]||'#C08A2E'};-webkit-print-color-adjust:exact;print-color-adjust:exact">${nivelLabel[r.nivel]||''}</span>
         </div>
       </div>
       <div class="pdf-rec-body">${r.cuerpo}</div>
@@ -2570,21 +2575,21 @@ function buildPrintReportHTML(rows,m,charts){
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',Arial,sans-serif;font-size:11pt;color:#1E293B;background:#fff}
-.page-header{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #1A56DB;padding-bottom:10px;margin-bottom:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page-header{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #C08A2E;padding-bottom:10px;margin-bottom:14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .brand{display:flex;align-items:center;gap:10px}
-.brand-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#0D1B2A,#1A56DB);color:#fff;font-size:16pt;font-weight:900;display:flex;align-items:center;justify-content:center;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.brand-name{font-size:18pt;font-weight:900;color:#0D1B2A;line-height:1}
+.brand-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#16261C,#C08A2E);color:#fff;font-size:16pt;font-weight:900;display:flex;align-items:center;justify-content:center;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.brand-name{font-size:18pt;font-weight:900;color:#16261C;line-height:1}
 .brand-sub{font-size:8pt;color:#64748B;margin-top:3px}
 .meta-box{text-align:right;font-size:8pt;color:#475569;line-height:1.5}
 .meta-box strong{font-size:9pt;color:#1E293B}
-.page-footer{border-top:1px solid #E2E8F0;padding-top:6px;margin-top:14px;display:flex;justify-content:space-between;font-size:7.5pt;color:#64748B}
-.section-tag{font-size:7.5pt;font-weight:700;color:#1A56DB;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px}
+.page-footer{border-top:1px solid #E8E0CC;padding-top:6px;margin-top:14px;display:flex;justify-content:space-between;font-size:7.5pt;color:#64748B}
+.section-tag{font-size:7.5pt;font-weight:700;color:#C08A2E;text-transform:uppercase;letter-spacing:.7px;margin-bottom:4px}
 .page-title{margin:6px 0 12px}
-.page-title h1{font-size:20pt;color:#0D1B2A;letter-spacing:-.5px}
+.page-title h1{font-size:20pt;color:#16261C;letter-spacing:-.5px}
 .page-title p{font-size:9pt;color:#64748B;margin-top:4px;line-height:1.4}
-.pill{display:inline-block;padding:3px 9px;border-radius:999px;background:#EFF6FF;color:#1D4ED8;font-size:7.5pt;font-weight:700;border:1px solid #BFDBFE}
+.pill{display:inline-block;padding:3px 9px;border-radius:999px;background:#FBF1DC;color:#8A5A12;font-size:7.5pt;font-weight:700;border:1px solid #EAD9A6}
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 14px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.kpi{border:1px solid #DDE7F2;border-radius:10px;padding:10px 10px 8px;background:#F8FAFC;position:relative;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.kpi{border:1px solid #E8E0CC;border-radius:10px;padding:10px 10px 8px;background:#F7F2E6;position:relative;overflow:hidden;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .kpi-bar{position:absolute;top:0;left:0;right:0;height:3px}
 .kpi-label{font-size:7pt;text-transform:uppercase;color:#64748B;font-weight:700;letter-spacing:.4px;margin-top:4px}
 .kpi-value{font-size:18pt;font-weight:900;line-height:1.1;margin-top:4px}
@@ -2592,34 +2597,34 @@ body{font-family:'Segoe UI',Arial,sans-serif;font-size:11pt;color:#1E293B;backgr
 .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;margin-top:10px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
 .grid-2c{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-.card{border:1px solid #DDE7F2;border-radius:10px;padding:12px;background:#fff}
-.card h2{font-size:10pt;color:#0D1B2A;font-weight:700;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid #EEF2F7}
+.card{border:1px solid #E8E0CC;border-radius:10px;padding:12px;background:#fff}
+.card h2{font-size:10pt;color:#16261C;font-weight:700;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid #EEF2F7}
 .card p,.card li{font-size:8.5pt;line-height:1.55;color:#334155}
 .card ul{padding-left:16px;margin-top:5px}
 .card li{margin-bottom:4px}
 .chart-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px}
-.chart-card{border:1px solid #DDE7F2;border-radius:10px;padding:10px;background:#fff}
-.chart-title{font-size:8pt;font-weight:700;color:#0D1B2A;margin-bottom:6px}
+.chart-card{border:1px solid #E8E0CC;border-radius:10px;padding:10px;background:#fff}
+.chart-title{font-size:8pt;font-weight:700;color:#16261C;margin-bottom:6px}
 .no-charts{border:1px dashed #CBD5E1;border-radius:10px;padding:20px;text-align:center;color:#64748B;font-size:9pt}
 table{width:100%;border-collapse:collapse;font-size:7.5pt;margin-top:6px}
-th{background:#0D1B2A;color:#fff;text-align:left;padding:5px 6px;font-size:7pt;text-transform:uppercase;letter-spacing:.2px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-td{padding:4px 6px;border-bottom:1px solid #E2E8F0;color:#334155;vertical-align:top}
-tr:nth-child(even) td{background:#F8FAFC;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+th{background:#16261C;color:#fff;text-align:left;padding:5px 6px;font-size:7pt;text-transform:uppercase;letter-spacing:.2px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+td{padding:4px 6px;border-bottom:1px solid #E8E0CC;color:#334155;vertical-align:top}
+tr:nth-child(even) td{background:#F7F2E6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 td.n{text-align:right;font-variant-numeric:tabular-nums}
 td.pct{font-weight:700;color:#057A55}
 .report-page{width:100%;min-height:270mm;padding:16mm 16mm 18mm;position:relative;background:#fff}
 .report-page+.report-page{page-break-before:always}
 /* ── RECOMENDACIONES PDF ── */
 .rec-grid-pdf{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-.pdf-rec{border:1px solid #DDE7F2;border-radius:10px;padding:10px;background:#fff;position:relative;overflow:hidden}
+.pdf-rec{border:1px solid #E8E0CC;border-radius:10px;padding:10px;background:#fff;position:relative;overflow:hidden}
 .pdf-rec-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:6px}
 .pdf-rec-ico{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13pt;flex-shrink:0}
-.pdf-rec-title{font-size:8pt;font-weight:700;color:#0D1B2A;line-height:1.25}
+.pdf-rec-title{font-size:8pt;font-weight:700;color:#16261C;line-height:1.25}
 .pdf-rec-badge{font-size:7pt;font-weight:700;border-radius:6px;padding:2px 6px;display:inline-block;margin-top:3px}
 .pdf-rec-body{font-size:8pt;line-height:1.5;color:#334155;margin-bottom:5px}
-.pdf-rec-body strong{color:#0D1B2A}
-.pdf-rec-accion{font-size:7.5pt;color:#475569;line-height:1.4;border-top:1px dashed #E2E8F0;padding-top:5px;margin-top:4px}
-.pdf-rec-accion strong{color:#1A56DB}
+.pdf-rec-body strong{color:#16261C}
+.pdf-rec-accion{font-size:7.5pt;color:#475569;line-height:1.4;border-top:1px dashed #E8E0CC;padding-top:5px;margin-top:4px}
+.pdf-rec-accion strong{color:#C08A2E}
 @media print{
   @page{size:A4 portrait;margin:0}
   body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
